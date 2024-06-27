@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+    .ltr-text {
+        direction: ltr;
+        text-align: left;
+    }
+}
+
+@layer components {
+  .banner {
+    height: 100٪; /* ارتفاع بنر را برابر با ارتفاع صفحه تنظیم می‌کند */
+    width: 100%; /* عرض بنر را تمام صفحه تنظیم می‌کند */
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.6)33.87%, rgba(243, 244, 246, 0.1)100%), url('/image/banner1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+}
+
+@layer utilities {
+    .duration-high {
+      @apply transition-all duration-300 ease-in-out;
+    }
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .spin {
+    animation: spin 40s linear infinite;
+  }
+  
