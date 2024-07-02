@@ -1,7 +1,9 @@
 "use client"
 import Navbar from "@/components/modules/navbar/Navbar";
+import Services from "@/components/templates/index/Services/Services";
+import ShopBranches from "@/components/templates/index/ShopBranches/ShopBranches";
 import Banner from "@/components/templates/index/banner/Banner";
-import HomePage from "@/components/templates/index/home/HomePage";
+import Latest from "@/components/templates/index/latest/Latest";
 
 export default function Home() {
 
@@ -9,7 +11,9 @@ export default function Home() {
     <main >
       <Navbar />
       <Banner />
-      <HomePage/>
+      <Services/>
+      <Latest/>
+      <ShopBranches/>
     </main>
   );
 }
