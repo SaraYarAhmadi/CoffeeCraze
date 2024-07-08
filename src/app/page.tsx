@@ -1,4 +1,5 @@
 "use client"
+import Footer from "@/components/modules/footer/Footer";
 import Navbar from "@/components/modules/navbar/Navbar";
 import Services from "@/components/templates/index/Services/Services";
 import ShopBranches from "@/components/templates/index/ShopBranches/ShopBranches";
@@ -14,6 +15,7 @@ export default function Home() {
       <Services/>
       <Latest/>
       <ShopBranches/>
+      <Footer/>
     </main>
   );
 }
