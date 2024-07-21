@@ -22,9 +22,9 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"],
+      "@/configs/*": ["./configs/*"],
+      "@/models/*": ["./models/*"]
     },
     "forceConsistentCasingInFileNames": true
   },
