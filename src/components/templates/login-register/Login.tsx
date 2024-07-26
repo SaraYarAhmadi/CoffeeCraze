@@ -1,9 +1,55 @@
 import React, { useState } from 'react'
-import Sms from './Sms'
+import Sms from './Sms';
+import showSwal from "../../../utils/helpers";
+import { valiadteEmail, valiadtePassword } from '@/utils/auth';
+import router from 'next/router';
+import swal from 'sweetalert';
 
 function Login({ showRegisterForm }: any) {
   const [isLoginWithOtp, setIsLoginWithOtp] = useState(false);
+  const [password, setPassword] = useState("");
+  const [phoneOrEmail, setPhoneOrEmail] = useState("");
+
+
   const hideOtpForm = () => setIsLoginWithOtp(false);
+  const loginWithPassword = async () => {
+    if (!phoneOrEmail) {
+      return showSwal("لطفا شماره تماس یا ایمیل را وارد کنید", "error", "چشم");
+    }
+
+    const isValidEmail = valiadteEmail(phoneOrEmail);
+    if (!isValidEmail) {
+      return showSwal("ایمیل وارد شده صحیح نیست", "error", "تلاش مجدد");
+    }
+
+    if (!password) {
+      return showSwal("پسورد را وارد کنید", "error", "تلاش مجدد");
+    }
+
+    const isValidPassword = valiadtePassword(password);
+    if (!isValidPassword) {
+      return showSwal("پسورد به اندازه کافی قوی نیست", "error", "تلاش مجدد");
+    }
+
+    const user = { email: phoneOrEmail, password };
+
+    const res = await fetch("/api/auth/signin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+    });
+    const data = await res.json();
+    console.log("res=>", data);
+
+    if (res.status === 200) {
+      showSwal("با موفقیت لاگین شدین", "success", "ورود به پنل کاربری");
+
+    } else if (res.status === 422 || res.status === 401) {
+      showSwal("کاربری با این اطلاعات یافت نشد", "error", "تلاش مجدد");
+    } else if (res.status === 419) {
+      showSwal("ایمیل یا پسورد صحیح نیست", "error", "تلاش مجدد");
+    }
+  };
   return (
     <>
       {!isLoginWithOtp ? (
@@ -15,6 +61,8 @@ function Login({ showRegisterForm }: any) {
                 className="w-full p-2 border border-gray-400 rounded-md placeholder:text-gray-500"
                 name="email"
                 id="email"
+                value={phoneOrEmail}
+                onChange={(event) => setPhoneOrEmail(event.target.value)}
                 placeholder="ایمیل/شماره موبایل"
               />
             </div>
@@ -23,6 +71,8 @@ function Login({ showRegisterForm }: any) {
                 type="password"
                 name="pass"
                 id="pass"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
                 className="w-full p-2 border border-gray-400 rounded-md placeholder:text-gray-500"
                 placeholder="رمزعبور"
               />
@@ -32,7 +82,7 @@ function Login({ showRegisterForm }: any) {
               <p className="text-sm mb-1 mr-1">مرا به یاد داشته باش</p>
             </div>
             <button
-              className="w-full bg-black text-white p-2 rounded-lg mb-2 hover:bg-white hover:text-black hover:border hover:border-gray-300 bg-gradient-to-r from-primary to-secondary border-2 border-primary py-2 px-4">
+              className="w-full bg-black text-white p-2 rounded-lg mb-2 hover:bg-white hover:text-black hover:border hover:border-gray-300 bg-gradient-to-r from-primary to-secondary border-2 border-primary py-2 px-4" onClick={loginWithPassword}>
               ورود
             </button>
             <div className="flex items-center justify-center w-full py-1">

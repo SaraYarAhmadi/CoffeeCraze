@@ -29,7 +29,6 @@ const ServicesData = [
 const Services = () => {
   return (
     <div className=" min-h-screen flex flex-col justify-center lg:px-24 px-5 bg-backgroundColor">
-     <span id="services"></span>
       <div className="py-5">
         <div className="container">
           {/* Heading section  */}
@@ -42,20 +41,13 @@ const Services = () => {
           {/* Services Card section  */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14 md:gap-5 place-items-center">
             {ServicesData.map((service) => (
-              <div
-                data-aos="fade-up"
-                data-aos-delay={service.aosDelay}
-                className="rounded-2xl bg-white hover:bg-primary hover:text-white relative shadow-xl duration-high group max-w-[300px]">
+              <div key={service.id} data-aos="fade-up" data-aos-delay={service.aosDelay} className="rounded-2xl bg-white hover:bg-primary hover:text-white relative shadow-xl duration-high group max-w-[300px]">
                 <div className="h-[122px]">
                   <img
-                    src={`./${service.img}`}
-                    alt=""
-                    className="max-w-[200px] block mx-auto transform -translate-y-14
-                  group-hover:scale-105 group-hover:rotate-6 duration-300"
-                  />
+                    src={`./${service.img}`} alt="" className="max-w-[200px] block mx-auto transform -translate-y-14
+                  group-hover:scale-105 group-hover:rotate-6 duration-300"/>
                 </div>
                 <div className="p-4 text-center">
-                  <div className="w-full "></div>
                   <h1 className="text-xl font-bold">{service.name}</h1>
                   <p className="text-gray-500 group-hover:text-white duration-high text-sm line-clamp-2">
                     {service.description}

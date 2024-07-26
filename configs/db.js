@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connectToDB = async () => {
-  if (mongoose.connections[0].readyState) {
+  if (mongoose?.connections && mongoose.connections[0]?.readyState) {
     return true;
   }
 

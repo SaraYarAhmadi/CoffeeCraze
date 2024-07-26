@@ -9,6 +9,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaShoppingCart, FaRegHeart } from "react-icons/fa";
 
+interface NavbarProps {
+  isLogin?: boolean
+}
+
 const Navbar = () => {
   useEffect(() => {
     AOS.init({
@@ -34,9 +38,9 @@ const Navbar = () => {
       <div>
         <div className=" flex flex-row justify-between p-5 lg:px-32 px-5 bg-gradient-to-r from-backgroundColor to-brightColor shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <div className="hidden md:flex flex-row items-center cursor-pointer gap-2">
-            <span>
-              <SiCoffeescript size={25} />
-            </span>
+
+            <SiCoffeescript size={25} />
+
           </div>
 
           <nav className="hidden md:flex flex-row items-center text-lg font-medium gap-8">
@@ -93,7 +97,7 @@ const Navbar = () => {
               <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs text-white bg-brandDark border-2  rounded-full -top-2 -end-2 dark:border-gray-900">1</div>
             </Link>
           </div>
-            
+
 
 
           <div className="md:hidden flex items-center">
@@ -104,9 +108,9 @@ const Navbar = () => {
             )}
           </div>
           <div className="md:hidden flex-row items-center cursor-pointer gap-2">
-            <span>
-              <SiCoffeescript size={25} />
-            </span>
+
+            <SiCoffeescript size={25} />
+
           </div>
         </div>
         <div
@@ -120,8 +124,15 @@ const Navbar = () => {
           </Link>
           <Link href="/contact-us" className=" hover:text-brightColor transition-all cursor-pointer" onClick={closeMenu}> تماس با ما
           </Link>
-          <Link href="/login-register">ورود / عضویت</Link>
-          {/* <Link href="/p-user"> حساب کاربری </Link> */}
+
+
+
+          <li>
+            <Link href="/login-register">ورود / عضویت</Link>
+          </li>
+
+          <Link href="/p-user"> حساب کاربری </Link>
+
         </div>
       </div>
     </div>

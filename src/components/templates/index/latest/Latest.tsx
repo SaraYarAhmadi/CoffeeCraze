@@ -2,7 +2,7 @@ import React from "react";
 import ProductCard from "../../../modules/productCard/ProductCard";
 import { IoIosArrowBack } from 'react-icons/io'
 
-const Product = () => {
+const Latest = () => {
     return (
         <section className=" min-h-screen flex justify-center lg:px-32 px-5 bg-backgroundColor mx-auto text-center">
             <div className="w-full mt-6 md:mt-10">
@@ -37,25 +37,7 @@ const Product = () => {
                 </div>
             </div>
         </section>
-        // <div className=" min-h-screen flex flex-col justify-center lg:px-32 px-5 bg-backgroundColor">
-
-        //     <div className="flex items-center justify-between px-36 m-5 text-xl">
-        //         <h1 className="font-semibold">
-        //             انواع قهوه
-        //         </h1>
-        //         <Link href={"/"} className="text-sky-500">مشاهده همه</Link>
-        //     </div>
-        //     <div className=" flex flex-wrap pb-8 gap-8 justify-center">
-        //         <ProductCard title="دان قهوه عربیکا کلمبیا" />
-        //         <ProductCard title="دان قهوه عربیکا پرو" />
-        //         <ProductCard title="دان قهوه عربیکا نیکاراگوئه" />
-        //         <ProductCard title="دان قهوه روبوستا چری هند" />
-        //         <ProductCard title="دان قهوه روبوستا تانزانیا" />
-        //         <ProductCard title="دان قهوه روبوستا ساحل عاج" />
-        //     </div>
-
-        // </div>
     );
 };
 
-export default Product;
+export default Latest;
