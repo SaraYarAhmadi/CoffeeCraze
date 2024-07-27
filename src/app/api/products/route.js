@@ -18,12 +18,6 @@ export async function POST(req) {
     const tags = formData.get("tags");
     const img = formData.get("img");
 
-    const buffer = Buffer.from(await img.arrayBuffer());
-    const filename = Date.now() + img.name;
-    const imgPath = path.join(process.cwd(), "public/uploads/" + filename);
-
-    await writeFile(imgPath, buffer);
-
     const product = await ProductModel.create({
       name,
       price,
@@ -32,7 +26,6 @@ export async function POST(req) {
       weight,
       suitableFor,
       smell,
-      img: `http://localhost:3000/uploads/${filename}`,
     });
 
     return Response.json(
@@ -41,39 +34,6 @@ export async function POST(req) {
     );
   } catch (err) {
     return Response.json({ message: err }, { status: 500 });
-  }
-}
-
-// Image Uploader
-export async function PUT(req) {
-  const formData = await req.formData();
-  const img = formData.get("img");
-
-  // Validation
-  if (!img) {
-    return Response.json(
-      { message: "Product has not image !!" },
-      { status: 400 }
-    );
-  }
-
-  try {
-    const buffer = Buffer.from(await img.arrayBuffer());
-    const filename = Date.now() + img.name;
-
-    await writeFile(
-      path.join(process.cwd(), "public/uploads/" + filename),
-      buffer
-    );
-
-    // ✅
-    return Response.json(
-      { message: "File uploaded successfully :))" },
-      { status: 201 }
-    );
-  } catch (err) {
-    console.log(err);
-    return Response.json({ message: err.message }, { status: 500 });
   }
 }
 

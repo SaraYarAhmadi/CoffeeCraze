@@ -34,10 +34,6 @@ const schema = new mongoose.Schema({
     type: Number,
     default: 5,
   },
-  img: {
-    type: String, // img src
-    required: true,
-  },
   comments: {
     type: [
       {
