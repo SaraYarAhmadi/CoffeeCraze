@@ -7,17 +7,8 @@ import path from "path";
 export async function POST(req) {
   try {
     connectToDB();
-    const formData = await req.formData();
-    const name = formData.get("name");
-    const price = formData.get("price");
-    const shortDescription = formData.get("shortDescription");
-    const longDescription = formData.get("longDescription");
-    const weight = formData.get("weight");
-    const suitableFor = formData.get("suitableFor");
-    const smell = formData.get("smell");
-    const tags = formData.get("tags");
-    const img = formData.get("img");
-
+    const body = await req.json();
+    const {name,price,shortDescription,longDescription,weight,suitableFor,smell}= body
     const product = await ProductModel.create({
       name,
       price,

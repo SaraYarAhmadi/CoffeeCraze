@@ -28,11 +28,12 @@ const schema = new mongoose.Schema({
     immutable: false,
   },
   productID: {
-    type: mongoose.Types.ObjectId,
-    ref: "Product",
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Product', // اشاره به مدل Product
+    required: true
   },
 });
 
-const model = mongoose.models.Comment || mongoose.model("Comment", schema);
+const Comment = mongoose.model('Comment', schema);
 
-export default model;
+module.exports = Comment;

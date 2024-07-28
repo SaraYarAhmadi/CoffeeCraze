@@ -37,13 +37,13 @@ const schema = new mongoose.Schema({
   comments: {
     type: [
       {
-        type: mongoose.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Comment",
       },
     ],
   },
 });
 
-const model = mongoose.models.Product || mongoose.model("Product", schema);
+const model =  mongoose.model("Product", schema);
 
 export default model;
