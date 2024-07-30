@@ -24,5 +24,5 @@ const schema = new mongoose.Schema({
   refreshToken: String,
 });
 
-const userModel = mongoose.model("User", schema);
-export default userModel;
+const model = mongoose.models.User || mongoose.model("User", schema);
+export default model;

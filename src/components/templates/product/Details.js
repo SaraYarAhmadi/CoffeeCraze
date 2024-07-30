@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { FaRegHeart, FaRegStar } from "react-icons/fa";
 import { MdChatBubble } from "react-icons/md";
@@ -5,10 +6,10 @@ import { IoIosArrowBack } from "react-icons/io";
 import Link from "next/link";
 import { IoCheckmark } from "react-icons/io5";
 import { CiStar } from "react-icons/ci";
-import { ProductViewModel } from "@/app/product/[id]/page";
 
 function Details({ product }) {
   const [amount, setAmount] = useState(1);
+  console.log(product);
 
   return (
     <div className="flex flex-col text-justify justify-start gap-6 lg:w-2/4 md:mr-8">

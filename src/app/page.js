@@ -1,0 +1,24 @@
+
+import Footer from "@/components/modules/footer/Footer";
+import Navbar from "@/components/modules/navbar/Navbar";
+import Services from "@/components/templates/index/Services/Services";
+import ShopBranches from "@/components/templates/index/ShopBranches/ShopBranches";
+import Banner from "@/components/templates/index/banner/Banner";
+import Latest from "@/components/templates/index/latest/Latest";
+import {authUser} from "../utils/serverHelpers";
+
+export default async function Home() {
+  const user = await authUser();
+  
+
+  return (
+    <main >
+      <Navbar isLogin={user ? true : false}  />
+      <Banner />
+      <Services />
+      <Latest />
+      <ShopBranches />
+      <Footer />
+    </main>
+  );
+}
