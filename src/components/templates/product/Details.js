@@ -1,11 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { FaRegHeart, FaRegStar } from "react-icons/fa";
-import { MdChatBubble } from "react-icons/md";
-import { IoIosArrowBack } from "react-icons/io";
+import { FaRegHeart, FaRegStar, FaStar } from "react-icons/fa";
 import Link from "next/link";
 import { IoCheckmark } from "react-icons/io5";
-import { CiStar } from "react-icons/ci";
 
 function Details({ product }) {
   const [amount, setAmount] = useState(1);
@@ -16,27 +13,29 @@ function Details({ product }) {
       <h1 className="text-3xl font-bold"> {product.name} </h1>
       <div className="flex items-center justify-start">
         <div className=" md:h-6 text-base md:text-2xl flex items-center justify-center text-yellow-400">
-          <CiStar />
-          <CiStar />
-          <CiStar />
-          <CiStar />
-          <CiStar />
+          {new Array(product.score).fill(0).map((item, index) => (
+            <FaStar key={index} />
+          ))}
+
+          {new Array(5 - product.score).fill(0).map((item, index) => (
+            <FaRegStar key={index} />
+          ))}
         </div>
-        <p>(دیدگاه کاربر)</p>
+        <p>(دیدگاه کاربر {product.comments.length})</p>
       </div>
 
-      <p className="text-gray-700">
-        دو گونه گیاهی مطرح در دنیای قهوه که همواره در تقابل با هم بوده اند
-        Robusta و Arabica در این ترکیب کنار هم قرار گرفته اند با این تفاوت که
-        اکثریت آنرا بر خلاف دیگر محصولات برشته کاری ” قهوه ست ” دانه های Robusta
-        تشکیل می دهند . برای افرادی که لذت نوشیدن قهوه را در میزان کافئین آن
-        جستجو می کنند . قهوه ای ساده که اسیدیته پایینی دارد و در مقابل تن واری و
-        کافئین و تلخی بالاتری نسبت به دیگر محصولات “قهوه ست ” دارد .
-      </p>
-      <span className="text-2xl font-semibold">199.000 تومان</span>
+      <p className="text-gray-900">{product.shortDescription}</p>
+      <div className="flex flex-col text-sm gap-y-1 text-gray-900">
+        <span> مناسب برای:{product.suitableFor} </span>
+        <span className="my-2">میزان بو:{product.smell} </span>
+        <p>وزن: {product.weight} گرم </p>
+      </div>
+      <span className="text-2xl font-semibold">
+        {product.price.toLocaleString()} تومان
+      </span>
       <div className="flex items-center justify-start gap-x-1">
         <IoCheckmark />
-        <p>موجود در انبار</p>
+        <p className="text-sm gap-y-1 text-gray-900">موجود در انبار</p>
       </div>
       <div className="flex flex-row items-center gap-12">
         <div className="flex flex-row items-center">

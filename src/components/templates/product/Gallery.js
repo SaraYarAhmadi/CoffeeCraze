@@ -10,7 +10,7 @@ function Gallery() {
   const [activeImg, setActiveImage] = useState(images.img1);
   return (
     <div className="flex flex-col gap-6 justify-center items-center">
-      <div className="lg:w-52 lg:h-52">
+      <div className="lg:w-80 lg:h-80">
         <img
           src={activeImg}
           alt=""

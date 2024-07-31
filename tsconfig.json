@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "src/components/templates/product/Details.js", "src/app/page.js", "src/components/modules/navbar/Navbar.js", "src/components/templates/login-register/Login.js", "src/components/templates/login-register/Sms.js", "src/app/layout.tsx", "src/app/login-register/page.js"  ],
+, "src/components/templates/product/Details.js", "src/app/page.js", "src/components/modules/navbar/Navbar.js", "src/components/templates/login-register/Login.js", "src/components/templates/login-register/Sms.js", "src/app/layout.tsx", "src/app/login-register/page.js", "src/components/modules/productCard/ProductCard.js"  ],
   "exclude": [
     "node_modules"
   ]
