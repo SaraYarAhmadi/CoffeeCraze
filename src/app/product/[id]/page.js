@@ -16,10 +16,8 @@ const product = async ({ params }) => {
   const product = await ProductModel.findOne({ _id: productID }).populate(
     "comments"
   );
-  console.log(product);
 
   const relatedProducts = await ProductModel.find({ smell: product.smell });
-  console.log("relatedProductsrelatedProductsrelatedProducts",relatedProducts);
   return (
     <div>
       <Navbar isLogin={user ? true : false} />

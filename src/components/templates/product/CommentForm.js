@@ -9,7 +9,6 @@ const CommentForm = ({ productID }) => {
   const [body, setBody] = useState("");
   const [score, setScore] = useState(5);
   const [isSaveUserInfo, setIsSaveUserInfo] = useState(false);
-  console.log(productID);
 
   const setCommentScore = (score) => {
     setScore(score);

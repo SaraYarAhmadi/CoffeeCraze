@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import Sms from './Sms';
 import showSwal from "../../../utils/helpers";
 import { valiadteEmail, valiadtePassword } from '@/utils/auth';
-import router from 'next/router';
-import swal from 'sweetalert';
 
 function Login({ showRegisterForm }) {
   const [isLoginWithOtp, setIsLoginWithOtp] = useState(false);

@@ -10,7 +10,7 @@ import { SiCoffeescript } from 'react-icons/si';
 
 function Footer() {
     return (
-        <div className=" bg-gradient-to-r from-[#FFDCAB] to-[#AB6B2E] text-black mt-8 md:mt-0">
+        <div className=" bg-gradient-to-r from-[#FFDCAB] to-[#AB6B2E] text-black">
             <div className="flex flex-col md:flex-row justify-between p-8 md:px-32 px-5">
                 <div className=" w-full md:w-1/4">
                     <h1 className="sm:text-4xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
