@@ -30,7 +30,7 @@ const Navbar = ({ isLogin }) => {
   };
 
   return (
-    <div className="fixed w-full z-10">
+    <div className="fixed w-full z-20">
       <div>
         <div className=" flex flex-row justify-between p-5 lg:px-32 px-5 bg-gradient-to-r from-backgroundColor to-brightColor shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
           <div className="hidden md:flex flex-row items-center cursor-pointer gap-2">
