@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
-import Sms from './Sms';
+import React, { useState } from "react";
+import Sms from "./Sms";
 import showSwal from "../../../utils/helpers";
-import { valiadteEmail, valiadtePassword } from '@/utils/auth';
+import { valiadteEmail, valiadtePassword } from "@/utils/auth";
+import { useRouter } from "next/navigation";
 
 function Login({ showRegisterForm }) {
+  const router = useRouter();
   const [isLoginWithOtp, setIsLoginWithOtp] = useState(false);
   const [password, setPassword] = useState("");
   const [phoneOrEmail, setPhoneOrEmail] = useState("");
-
 
   const hideOtpForm = () => setIsLoginWithOtp(false);
   const loginWithPassword = async () => {
@@ -40,8 +41,13 @@ function Login({ showRegisterForm }) {
     console.log("res=>", data);
 
     if (res.status === 200) {
-      showSwal("با موفقیت لاگین شدین", "success", "ورود به پنل کاربری");
-
+      swal({
+        title: "با موفقیت لاگین شدین",
+        icon: "success",
+        buttons: "ورود به پنل کاربری",
+      }).then(() => {
+        router.replace("p-user");
+      });
     } else if (res.status === 422 || res.status === 401) {
       showSwal("کاربری با این اطلاعات یافت نشد", "error", "تلاش مجدد");
     } else if (res.status === 419) {
@@ -80,11 +86,16 @@ function Login({ showRegisterForm }) {
               <p className="text-sm mb-1 mr-1">مرا به یاد داشته باش</p>
             </div>
             <button
-              className="w-full bg-black text-white p-2 rounded-lg mb-2 hover:bg-white hover:text-black hover:border hover:border-gray-300 bg-gradient-to-r from-primary to-secondary border-2 border-primary py-2 px-4" onClick={loginWithPassword}>
+              className="w-full bg-black text-white p-2 rounded-lg mb-2 hover:bg-white hover:text-black hover:border hover:border-gray-300 bg-gradient-to-r from-primary to-secondary border-2 border-primary py-2 px-4"
+              onClick={loginWithPassword}
+            >
               ورود
             </button>
             <div className="flex items-center justify-center w-full py-1">
-              <p className="text-sm mb-1 mr-1">  رمز عبور را فراموش کرده اید؟ </p>
+              <p className="text-sm mb-1 mr-1">
+                {" "}
+                رمز عبور را فراموش کرده اید؟{" "}
+              </p>
             </div>
             <button
               className="w-full bg-black text-white p-2 rounded-lg mb-2 hover:bg-white hover:text-black hover:border hover:border-gray-300 bg-gradient-to-r from-primary to-secondary border-2 border-primary py-2 px-4"
@@ -94,7 +105,8 @@ function Login({ showRegisterForm }) {
             </button>
             <div className="text-center text-gray-400">
               <button
-                className="w-full border border-gray-300 text-md p-2 mt-3 rounded-lg mb-6 text-black hover:bg-black hover:text-white hover:border hover:border-gray-300 hover:scale-105 duration-200 py-2  transition-all" onClick={showRegisterForm}
+                className="w-full border border-gray-300 text-md p-2 mt-3 rounded-lg mb-6 text-black hover:bg-black hover:text-white hover:border hover:border-gray-300 hover:scale-105 duration-200 py-2  transition-all"
+                onClick={showRegisterForm}
               >
                 ثبت نام
               </button>
@@ -103,11 +115,9 @@ function Login({ showRegisterForm }) {
         </>
       ) : (
         <Sms hideOtpForm={hideOtpForm} />
-      )
-      }
+      )}
     </>
-
-  )
+  );
 }
 
-export default Login
+export default Login;

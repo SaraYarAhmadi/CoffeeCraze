@@ -3,6 +3,9 @@ import Sidebar from "@/components/modules/p-user/Sidebar";
 import Topbar from "@/components/modules/p-user/Topbar";
 import { authUser } from "@/utils/serverHelpers";
 import { redirect } from "next/navigation";
+import Navbar from "@/components/modules/navbar/Navbar";
+import Footer from "@/components/modules/footer/Footer";
+
 
 const Layout = async ({ children }) => {
   const user = await authUser();
@@ -11,13 +14,18 @@ const Layout = async ({ children }) => {
   }
 
   return (
-    <main class="md:bg-white md:dark:bg-gray-800 flex gap-x-10 2xl:gap-x-14 lg:px-8 xl:px-14 2xl:px-25 lg:py-7">
+    <>
+    <Navbar isLogin={user ? true : false} />
+     <main class="md:bg-backgroundColor flex min-h-screen mx-auto text-center lg:px-32 px-5 py-32">
        <Sidebar />
-      <section class="w-full max-w-[1432px] mx-auto bg-gray-100 dark:bg-gray md:p-10 lg:rounded-4xl">
+      <section class="w-full max-w-[1432px] mx-auto bg-backgroundColor lg:rounded-4xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] border-primary">
       <Topbar />
       {children}
       </section>
     </main>
+    <Footer />
+    </>
+   
   );
 };
 
