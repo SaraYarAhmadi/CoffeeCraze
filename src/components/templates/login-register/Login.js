@@ -3,6 +3,7 @@ import Sms from "./Sms";
 import showSwal from "../../../utils/helpers";
 import { valiadteEmail, valiadtePassword } from "@/utils/auth";
 import { useRouter } from "next/navigation";
+import swal from "sweetalert";
 
 function Login({ showRegisterForm }) {
   const router = useRouter();

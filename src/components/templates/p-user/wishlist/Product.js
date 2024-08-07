@@ -3,6 +3,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 
 import swal from "sweetalert";
 const Card = ({ price, score, name, productID }) => {
+  
   const removeProduct = () => {
     swal({
       title: "آیا از حذف محصول اطمینان دارید؟",

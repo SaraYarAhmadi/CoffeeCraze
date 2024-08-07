@@ -10,7 +10,6 @@ function AddToWishlist({ productID }) {
   useEffect(() => {
     const authUser = async () => {
       const res = await fetch("/api/auth/me");
-      console.log(res);
       if (res.status === 200) {
         const data = await res.json();
         console.log(data);
@@ -43,8 +42,6 @@ function AddToWishlist({ productID }) {
       },
       body: JSON.stringify(wish),
     });
-
-    console.log("Response ->", res);
 
     if (res.status === 201) {
       showSwal("محصول مورد نظر به علاقه‌مندی‌ها اضافه شد", "success", "فهمیدم");
