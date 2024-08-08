@@ -4,7 +4,6 @@ import {
   FaPhone,
   FaTelegramPlane,
 } from "react-icons/fa";
-import styles from "./information.module.css";
 import { PiCoffeeFill } from "react-icons/pi";
 import { BiSolidContact } from "react-icons/bi";
 

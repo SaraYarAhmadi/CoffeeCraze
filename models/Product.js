@@ -14,10 +14,6 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  longDescription: {
-    type: String,
-    required: true,
-  },
   weight: {
     type: Number,
     required: true,
@@ -34,17 +30,20 @@ const schema = new mongoose.Schema({
     type: Number,
     default: 5,
   },
+  img: {
+    type: String, // img src
+    required: true,
+  },
   comments: {
     type: [
       {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: "Comment",
       },
     ],
   },
 });
 
+const model = mongoose.models.Product || mongoose.model("Product", schema);
 
-const Product = mongoose.models.Product || mongoose.model("Product", schema);
-
-export default Product;
+export default model;

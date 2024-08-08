@@ -8,7 +8,7 @@ function Comments({ product }) {
   const { productID, comments } = product;
 
   return (
-    <div className="flex flex-col md:flex-row gap-x-4 lg:px-32 px-5 pt-24">
+    <div className="flex flex-col md:flex-row gap-x-4 lg:px-32 px-5 pt-12">
       <div className="w-full md:w-1/2 bg-white dark:bg-darker rounded-2xl p-4.5 sm:p-5 mt-8">
         {" "}
         {/* Modified className for mobile */}
