@@ -2,6 +2,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import Slider from "react-slider";
 import ProductCard from "../../modules/productCard/ProductCard";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import Link from "next/link";
 
 const max = 1000000;
 const min = 0;
@@ -16,6 +18,8 @@ export const initialFilterValue = {
 export default function Aside({ allProducts }) {
   const [filtersValue, setFiltersValue] = useState(initialFilterValue);
   const { searchValue, priceFilterList } = filtersValue;
+  const suggestedProducts = allProducts.slice(-3);
+  console.log("suggestedProducts", suggestedProducts);
 
   const productSearchHandler = (e) => {
     if (e.keyCode === 13) {
@@ -50,7 +54,7 @@ export default function Aside({ allProducts }) {
     <>
       <aside className="col-span-full lg:col-span-4 xl:col-span-3 lg:sticky top-6 space-y-6">
         <div className=" h-[100vh] bg-transparent">
-          <div className="h-[100vh] overflow-y-auto">
+          <div className="h-[100vh]">
             <div className="space-y-5">
               <div className="h-17 shadow-light dark:shadow-none bg-white dark:bg-gray-800 dark:border border-gray-700 rounded-2xl">
                 <div className="h-full flex text-slate-500 dark:text-gray-500">
@@ -129,6 +133,47 @@ export default function Aside({ allProducts }) {
                     </div>
                   </aside>
                 </div>
+              </div>
+
+              <div className="hidden lg:flex flex-col bg-white p-4 gap-y-2 mt-10">
+                <p className=""> پیشنهادی برای شما</p>
+                {suggestedProducts.map((product) => (
+                  <div className="flex items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 p-2">
+                    <div className="w-[100px] overflow-hidden rounded-xl">
+                      <img
+                        className="object-cover w-full h-full overflow-hidden"
+                        src={product.img}
+                        alt=""
+                      />
+                    </div>
+
+                    <div className="flex flex-col justify-between p-4 leading-normal">
+                      <Link href={`product/${product._id}`} className="mb-2 tracking-tight text-gray-900 text-sm">
+                        {product.name}
+                      </Link>
+                      <div className="flex items-center justify-center gap-x-2 md:gap-x-2.5 mt-1.5 md:mt-2.5 pb-3 border-b border-b-gray-300">
+                        <div className="text-orange-400 pr-1">
+                          <span className="font-DanaDemiBold text-base">
+                            {product.price}
+                          </span>
+                          <span className="text-xs tracking-tighter pr-1">
+                            تومان
+                          </span>
+                        </div>
+                      </div>
+                      <div className=" md:h-6 text-base flex items-center justify-center text-yellow-400 mt-1">
+                        {new Array(product.score).fill(0).map((item, index) => (
+                          <FaStar key={index} />
+                        ))}
+                        {new Array(5 - product.score)
+                          .fill(0)
+                          .map((item, index) => (
+                            <FaRegStar key={index} />
+                          ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

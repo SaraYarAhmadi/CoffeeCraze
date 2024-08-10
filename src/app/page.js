@@ -10,7 +10,7 @@ import ProductModel from "@/models/Product";
 
 export default async function Home() {
   const user = await authUser();
-  const latestProducts = await ProductModel.find({}).sort({ _id: -1 }).limit(8);
+  const latestProducts = await ProductModel.find({}).sort({ _id: -1 }).limit(3);
 
   return (
     <main >

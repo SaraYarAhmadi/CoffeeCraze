@@ -4,7 +4,7 @@ import { IoIosArrowBack } from 'react-icons/io'
 
 const Latest = ({ products }) => {
     return (
-        <section className=" min-h-screen flex justify-center lg:px-32 px-5 bg-backgroundColor mx-auto text-center">
+        <section className="flex justify-center lg:px-32 px-5 bg-backgroundColor mx-auto text-center">
             <div className="w-full mt-6 md:mt-10">
                 <div className="overflow-auto flex flex-col justify-between bg-white border-2 border-solid box-border rounded-xl w-full p-8 bg-gradient-to-r from-backgroundColor to-brightColor shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
 
