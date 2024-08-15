@@ -16,9 +16,9 @@ const Layout = async ({ children }) => {
   return (
     <>
     <Navbar isLogin={user ? true : false} />
-     <main class="md:bg-backgroundColor flex min-h-screen mx-auto text-center lg:px-32 px-5 py-32">
+     <main className="bg-backgroundColor flex min-h-screen mx-auto text-center lg:px-32 px-5 py-32 pt-24 md:pt-48 pb-16">
        <Sidebar />
-      <section class="w-full max-w-[1432px] mx-auto bg-backgroundColor lg:rounded-4xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] border-primary">
+      <section className="w-full max-w-[1432px] mx-auto bg-backgroundColor lg:rounded-4xl shadow-[0_3px_10px_rgb(0,0,0,0.2)] border-primary">
       <Topbar />
       {children}
       </section>

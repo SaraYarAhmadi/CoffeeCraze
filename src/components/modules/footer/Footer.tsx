@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 import {
     FaFacebook,
@@ -22,60 +23,60 @@ function Footer() {
                 <div>
                     <h1 className=" font-medium text-xl pb-4 pt-5 md:pt-0">لینک های مفید</h1>
                     <nav className=" flex flex-col gap-2">
-                        <a
+                        <Link
                             className=" hover:text-backgroundColor transition-all cursor-pointer"
-                            href="/"
+                            href="/gallery"
                         >
                             محصولات
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             className=" hover:text-backgroundColor transition-all cursor-pointer"
                             href="/"
                         >
                             وبلاگ
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             className=" hover:text-backgroundColor transition-all cursor-pointer"
-                            href="/"
+                            href="/about-us"
                         >
                             درباره ما
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             className=" hover:text-backgroundColor transition-all cursor-pointer"
-                            href="/"
+                             href="/contact-us"
                         >
                             تماس با ما
-                        </a>
+                        </Link>
                     </nav>
                 </div>
                 <div>
                     <h1 className=" font-medium text-xl pb-4 pt-5 md:pt-0">آدرس شعب</h1>
                     <nav className=" flex flex-col gap-2">
-                        <a
+                        <Link
                             className=" hover:text-backgroundColor transition-all cursor-pointer"
-                            href="/"
+                            href="/contact-us"
                         >
                             تهران، چهارراه استانبول، جنب پاساژ گلشن، پلاک 410
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             className=" hover:text-backgroundColor transition-all cursor-pointer"
-                            href="/"
+                            href="/contact-us"
                         >
                             تهران خیابان شریعتی، بالاتر از میرداماد، نبش بن بست شریفی
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             className=" hover:text-backgroundColor transition-all cursor-pointer"
-                            href="/"
+                            href="/contact-us"
                         >
-                            تهران خیابان شریعتی، بالاتر از پل سیدخندان، پلاک 121
-                        </a>
+                            تهران خیابان پاسداران، نبش خیابان پانزدهم، پلاک 230 
+                        </Link>
                     </nav>
                 </div>
                 <div>
                     <h1 className=" font-medium text-xl pb-4 pt-5 md:pt-0"> تماس با ما </h1>
                     <nav className=" flex flex-col gap-2">
                         <a className=" hover:text-backgroundColor transition-all cursor-pointer" href="/">
-                            CoffeeCraze@email.com
+                            Coffee@email.com
                         </a>
                         <a className=" hover:text-backgroundColor transition-all cursor-pointer" href="/">
                             09372470000

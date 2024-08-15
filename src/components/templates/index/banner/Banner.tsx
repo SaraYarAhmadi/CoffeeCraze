@@ -17,7 +17,7 @@ const Hero = () => {
   }, []);
   return (
     <>
-      <div className="banner 66">
+      <div className="banner pt-24">
         <div className="container pb-8 sm:pb-0">
           <div className="grid grid-cols-1 sm:grid-cols-2">
             {/* text content section */}
@@ -40,7 +40,7 @@ const Hero = () => {
             {/* Image section */}
             <div
               data-aos="zoom-in" data-aos-duration="300" className="min-h-[450px] flex justify-center items-center relative order-1 sm:order-2 ">
-              <img data-aos-once="true" src="/image/b3.png" alt="biryani img" className="w-[350px] sm:w-[300px] lg:w-[450px] sm:scale-125 mx-auto spin " />
+              <img data-aos-once="true" src="/image/b2.png" alt="biryani img" className="w-[350px] sm:w-[300px] lg:w-[450px] sm:scale-125 mx-auto spin " />
               <div
                 data-aos="fade-left"
                 className="bg-gradient-to-r from-primary to-secondary p-3 rounded-xl absolute top-10 left-10" >

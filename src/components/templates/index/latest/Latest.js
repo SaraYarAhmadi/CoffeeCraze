@@ -1,6 +1,7 @@
 import React from "react";
 import ProductCard from "../../../modules/productCard/ProductCard";
 import { IoIosArrowBack } from 'react-icons/io'
+import Link from "next/link";
 
 const Latest = ({ products }) => {
     return (
@@ -13,14 +14,14 @@ const Latest = ({ products }) => {
                             <h4 className="section-title"> انواع قهوه </h4>
                         </div>
                         <div>
-                            <a href="#" className="section-link flex items-center justify-between  text-base font-DanaMedium tracking-tighter">
+                            <Link href="/gallery" className="section-link flex items-center justify-between  text-base font-DanaMedium tracking-tighter">
                                 <span className="hidden md:inline-block">
                                     مشاهده همه
                                 </span>
                                 <span className="inline-block md:hidden"> مشاهده همه</span>
                                 <div className="w-4 h-4 text-base">  <IoIosArrowBack /></div>
 
-                            </a>
+                            </Link >
                         </div>
 
                     </div>

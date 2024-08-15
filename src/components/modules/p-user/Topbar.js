@@ -36,16 +36,16 @@ const Topbar = () => {
 
 
   return (
-    <header class="flex-col items-center justify-start md:border-none border-b-gray-700 mb-6 md:mb-14 p-5 bg-gradient-to-r from-backgroundColor to-brightColor shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+    <header className="flex-col items-center justify-start md:border-none border-b-gray-700 mb-6 md:mb-14 p-5 bg-gradient-to-r from-backgroundColor to-brightColor shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
       <div className="flex items-center justify-between ">
-        <h3 class="hidden md:block font-danaDemiBold text-xl text-zinc-800">
-          سروش طهرانی عزیز؛ خوش اومدی 🙌
+        <h3 className="hidden md:block font-danaDemiBold text-xl text-zinc-800">
+           خوش اومدی 🙌
         </h3>
-        <div class="user-profile">
+        <div className="user-profile">
           <img
-            src="./image/menu4.jpg"
+            src="/image/avatar.png"
             alt="soroushsara"
-            class="object-cover w-12 h-12 md:w-14 md:h-14 rounded-full inline-block cursor-pointer"
+            className="object-cover w-12 h-12 md:w-14 md:h-14 rounded-full inline-block cursor-pointer"
           />
         </div>
         <div className="md:hidden flex justify-between items-center" onClick={logoutHandler}>
@@ -53,9 +53,8 @@ const Topbar = () => {
         </div>
       </div>
 
-      <ul className="md:hidden flex space-x-4 justify-between text-lg font-medium mt-4 pt-2  border-t border-gray-800">
-        <Link href={"/p-user"} className="flex gap-x-1 items-center opacity-100">
-          <ImReply />
+      <ul className="md:hidden flex flex-wrap space-x-4 space-y-4 justify-between text-lg font-medium mt-4 pt-2  border-t border-gray-800">
+        <Link href={"/p-user"} className="flex gap-x-1 items-center">
           پیشخوان
         </Link>
         <Link href={"/p-user/orders"} className="flex gap-x-1 items-center">

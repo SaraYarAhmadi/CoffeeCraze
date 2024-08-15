@@ -1,12 +1,13 @@
 import connectToDB from "@/configs/db";
 import CommentModel from "@/models/Comment";
 import ProductModel from "@/models/Product";
+import UserModel from "@/models/User";
 
 export async function POST(req) {
   try {
     connectToDB();
     const reqBody = await req.json();
-    const { username, body, email, score, productID } = reqBody;
+    const { username, body, email, score, productID,user } = reqBody;
 
     // Validation
 
@@ -16,11 +17,22 @@ export async function POST(req) {
       email,
       score,
       productID,
+      user,
     });
 
     const updatedProduct = await ProductModel.findOneAndUpdate(
       {
         _id: productID,
+      },
+      {
+        $push: {
+          comments: comment._id,
+        },
+      }
+    );
+    const updatedUser = await UserModel.findOneAndUpdate(
+      {
+        _id: user,
       },
       {
         $push: {

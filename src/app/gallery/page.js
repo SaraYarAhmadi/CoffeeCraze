@@ -16,7 +16,7 @@ async function Gallery() {
       {/* <!-- sidebar --> */}
 
       <>
-        <div className="min-h-screen bg-backgroundColor mx-auto text-center lg:px-32 px-5 pt-48 pb-16">
+        <div className="min-h-screen bg-backgroundColor mx-auto text-center lg:px-32 px-5 pt-24 md:pt-48  pb-16">
           <Breadcrumb
             links={[
               { id: 1, title: "خانه", to: "/" },

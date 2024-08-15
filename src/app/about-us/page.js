@@ -10,12 +10,12 @@ const page = async () => {
     <>
       <Navbar isLogin={user ? true : false} />
       <div className="fmin-h-screen lg:px-32 px-5 bg-backgroundColor mx-auto text-center md:pt-24 pt-10">
-      <Breadcrumb
-            links={[
-              { id: 1, title: "خانه", to: "/" },
-              { id: 2, title: "درباره ما", to: "/about-us" },
-            ]}
-          />
+        <Breadcrumb
+          links={[
+            { id: 1, title: "خانه", to: "/" },
+            { id: 2, title: "درباره ما", to: "/about-us" },
+          ]}
+        />
         <div className="flex items-center justify-center w-full h-full">
           <img
             src="./image/about5.png"
@@ -24,19 +24,19 @@ const page = async () => {
           />
         </div>
 
-        <section class="flex justify-center items-center w-full px-8 mt-10">
-          <div class="row align-center">
-            <div class="col-lg-8 mx-auto">
-              <div class="text-center">
-                <h2 class="text-xl text-primary my-4">
+        <section className="flex justify-center items-center w-full px-8 mt-10">
+          <div className="row align-center">
+            <div className="col-lg-8 mx-auto">
+              <div className="text-center">
+                <h2 className="text-xl text-primary my-4">
                   داستان ما از کجا شروع شد؟
                 </h2>
-                <div class="editor-content main-content">
+                <div className="editor-content main-content">
                   <p>
                     تجربه‌ای به قدمت چهار نسل و ارتباط مستمر با مصرف کنندگان
-                    ضامن این ویژگی‌هاست. از ویژگی‌های بارز مجموعه قهوه ست واردات
+                    ضامن این ویژگی‌هاست. از ویژگی‌های بارز مجموعه قهوه واردات
                     مواد اولیه راسا به وسیله مدیریت مجموعه و انتخاب بهترین مواد
-                    اولیه جهت تولید قهوه است. مجموعه قهوه ست اولین مجموعه مرتبط
+                    اولیه جهت تولید قهوه است. مجموعه قهوه اولین مجموعه مرتبط
                     با قهوه در ایران است که در سال 2007 به عضویت انجمن تخصصی
                     قهوه اروپا (Speciality coffee association of Europe) در آمده
                     است و بسیاری از دوره‌های مربوط به فرآوری قهوه را مدیریت این
@@ -45,14 +45,14 @@ const page = async () => {
                     قهوه(Roasting) را در کشور آمریکا که از پیشگامان این صنعت است
                     را گذرانده است. اکنون با پشتوانه دستاوردهای گذشته و تکنولوژی
                     روز دنیا وارد مرحله تولید قهوه به صورت صنعتی و گسترده
-                    شده‌ایم و مفتخریم اعلام کنیم که «قهوه ست» از این پس یک نام
+                    شده‌ایم و مفتخریم اعلام کنیم که «قهوه» از این پس یک نام
                     تجاری صنعتی در صنعت قهوه ایران است.
                   </p>
                 </div>{" "}
-                <div class="my-8">
+                <div className="my-8">
                   <Link
                     href="/contact-us"
-                    class="bg-gradient-to-r from-primary to-secondary border-2 border-primary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full "
+                    className="bg-gradient-to-r from-primary to-secondary border-2 border-primary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full "
                     target="_self"
                   >
                     تماس با ما
@@ -85,7 +85,7 @@ const page = async () => {
                     فنجان داغ قهوه
                   </h1>
                   <p className="text-sm text-gray-500 tracking-wide leading-5">
-                    خرید آنلاین قهوه از فروشگاه قهوه ملو می‌تواند یک تجربه‌ی
+                    خرید آنلاین قهوه از فروشگاه قهوه می‌تواند یک تجربه‌ی
                     شگفت‌انگیز برای شما باشد، به خصوص زمانی که شما به دنبال
                     قهوه‌ ای با کیفیت بالا و تازگی و طراوت فوق‌ العاده از قهوه
                     خود هستید. فروشگاه اینترنتی قهوه ملو، به شما این امکان را
@@ -94,8 +94,8 @@ const page = async () => {
                     انتخاب نمایید.
                     <br />
                     <br />
-                    از فروشگاه قهوه ملو دارای مزایای بسیاری است که در ادامه به
-                    شما بیان خواهیم کرد. قهوه ملو مجموعه ایست در زمینه خرید قهوه
+                    از فروشگاه قهوه دارای مزایای بسیاری است که در ادامه به
+                    شما بیان خواهیم کرد. قهوه مجموعه ایست در زمینه خرید قهوه
                     و فروش قهوه اینترنتی و ارائه انواع دانه قهوه و قهوه های
                     آسیاب شده همچنین لوازم و تجهیزات و دستگاه های خانگی حرفه ای
                     به مشتریان خانگی و قهوه فروشی ها، کافی شاپ ها، رستوران ها

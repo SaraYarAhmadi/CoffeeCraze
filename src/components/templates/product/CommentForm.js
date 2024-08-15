@@ -3,21 +3,49 @@ import { useEffect, useState } from "react";
 import showSwal from "../../../utils/helpers";
 import { FaRegUserCircle } from "react-icons/fa";
 
-const CommentForm = ({ productID }) => {
+const CommentForm = ({ productID, userId }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [body, setBody] = useState("");
   const [score, setScore] = useState(5);
   const [isSaveUserInfo, setIsSaveUserInfo] = useState(false);
 
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    const authUser = async () => {
+      const res = await fetch("/api/auth/me");
+
+      if (res.status === 200) {
+        const data = await res.json();
+        setUser({ ...data });
+      }
+    };
+
+    authUser();
+  }, []);
+
   const setCommentScore = (score) => {
+    if (!user?._id) {
+      return showSwal(
+        "برای اضافه کردن به علاقه مندی‌ها لطفا ابتدا لاگین بکنین",
+        "error",
+        "فهمیدم"
+      );
+    }
     setScore(score);
     showSwal("امتیاز شما با موفقیت ثبت شد", "success", "ادامه ثبت کامنت");
   };
 
   const submitComment = async () => {
     // Validation (You)
-
+    if (!user?._id) {
+      return showSwal(
+        "برای اضافه کردن به علاقه مندی‌ها لطفا ابتدا لاگین بکنین",
+        "error",
+        "فهمیدم"
+      );
+    }
     if (isSaveUserInfo) {
       const userInfo = {
         username,
@@ -33,6 +61,7 @@ const CommentForm = ({ productID }) => {
       body,
       score,
       productID,
+      user: user._id,
     };
 
     const res = await fetch("/api/comments", {
@@ -59,14 +88,29 @@ const CommentForm = ({ productID }) => {
         <p className="flex items-center justify-start text-sm mb-3 sm:mb-4">
           نشانی ایمیل شما منتشر نخواهد شد.
         </p>
-        <div className="flex items-center justify-start md:my-2">
+        <div className="flex items-center justify-start my-2">
           <p>امتیاز شما :</p>
           <div className="flex items-center justify-start text-gray-500">
-            <IoMdStar className="hover:text-orange-300" onClick={() => setCommentScore(5)} />
-            <IoMdStar className="hover:text-orange-300" onClick={() => setCommentScore(4)} />
-            <IoMdStar className="hover:text-orange-300" onClick={() => setCommentScore(3)} />
-            <IoMdStar className="hover:text-orange-300" onClick={() => setCommentScore(2)} />
-            <IoMdStar className="hover:text-orange-300" onClick={() => setCommentScore(1)} />
+            <IoMdStar
+              className="hover:text-orange-300"
+              onClick={() => setCommentScore(5)}
+            />
+            <IoMdStar
+              className="hover:text-orange-300"
+              onClick={() => setCommentScore(4)}
+            />
+            <IoMdStar
+              className="hover:text-orange-300"
+              onClick={() => setCommentScore(3)}
+            />
+            <IoMdStar
+              className="hover:text-orange-300"
+              onClick={() => setCommentScore(2)}
+            />
+            <IoMdStar
+              className="hover:text-orange-300"
+              onClick={() => setCommentScore(1)}
+            />
           </div>
         </div>
         <textarea
@@ -103,7 +147,10 @@ const CommentForm = ({ productID }) => {
           <p className="text-sm mb-1 mr-1">مرا به یاد داشته باش</p>
         </div>
         <div className="flex gap-x-4 justify-end mt-4.5 sm:mt-6">
-          <button className="flex-grow sm:grow-0 sm:w-36 bg-gradient-to-r from-primary to-secondary border-2 border-primary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full"  onClick={submitComment}>
+          <button
+            className="flex-grow sm:grow-0 sm:w-36 bg-gradient-to-r from-primary to-secondary border-2 border-primary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full"
+            onClick={submitComment}
+          >
             ارسال
           </button>
         </div>

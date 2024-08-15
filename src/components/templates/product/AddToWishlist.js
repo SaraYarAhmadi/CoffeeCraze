@@ -2,10 +2,12 @@
 import showSwal from "../../../utils/helpers";
 import React, { useEffect, useState } from "react";
 import { FaRegHeart, FaRegStar, FaStar } from "react-icons/fa";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import swal from "sweetalert";
 
 function AddToWishlist({ productID }) {
   const [user, setUser] = useState({});
+  const router = useRouter();
 
   useEffect(() => {
     const authUser = async () => {
@@ -44,16 +46,22 @@ function AddToWishlist({ productID }) {
     });
 
     if (res.status === 201) {
-      showSwal("محصول مورد نظر به علاقه‌مندی‌ها اضافه شد", "success", "فهمیدم");
+      swal({
+        title: "محصول مورد نظر به علاقه‌مندی‌ها اضافه شد",
+        icon: "success",
+        buttons: "ورود به علاقه مندی ها",
+      }).then(() => {
+        router.replace("/wishList");
+      });
     }
   };
 
   return (
     <div onClick={addToWishlist}>
-        <Link className="flex items-center justify-start gap-x-2" href="/wishList">
-          <FaRegHeart />
+      <div className="flex items-center justify-start gap-x-2">
+        <FaRegHeart />
         <span className="text-sm">اضافه کردن به علاقه مندی ها</span>
-        </Link>
+      </div>
     </div>
   );
 }

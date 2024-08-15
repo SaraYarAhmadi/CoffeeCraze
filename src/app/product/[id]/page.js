@@ -28,14 +28,14 @@ const product = async ({ params }) => {
                 <img
                   src={product.img}
                   alt=""
-                  className="md:w-full h-full aspect-square object-cover rounded-xl"
+                  className="lg:w-full h-full aspect-square object-cover rounded-xl"
                 />
             </div>
             {/* ABOUT */}
             <Details product={JSON.parse(JSON.stringify(product))} />
           </div>
         </div>
-        <Comments product={JSON.parse(JSON.stringify(product))} />
+        <Comments product={JSON.parse(JSON.stringify(product))}/>
         <MoreProducts
           relatedProducts={JSON.parse(JSON.stringify(relatedProducts))}
         />

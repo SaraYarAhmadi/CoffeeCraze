@@ -82,15 +82,9 @@ const Navbar = ({ isLogin }) => {
           <div className="hidden md:flex flex-row font-medium items-center justify-center gap-8 text-xl">
             <Link href="/cart" className="relative">
               <FaShoppingCart />
-              <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs text-white bg-brandDark border-2 rounded-full -top-2 -end-2">
-                1
-              </div>
             </Link>
-            <Link href="/wishlist" className="relative">
+            <Link href="/wishList" className="relative">
               <FaRegHeart />
-              <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs text-white bg-brandDark border-2 rounded-full -top-2 -end-2 ">
-                1
-              </div>
             </Link>
           </div>
 

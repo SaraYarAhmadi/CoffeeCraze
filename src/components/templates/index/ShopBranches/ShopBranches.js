@@ -25,7 +25,7 @@ function ShopBranches() {
             href="/contact-us"
             className=" flex flex-col items-center my-5 gap-3"
           >
-            <Button title="شعبه استانبول در نقشه" />
+            <Button title="شعبه استانبول " />
           </Link>
         </div>
         <div className="flex flex-col justify-center items-center rounded-lg">
@@ -40,7 +40,7 @@ function ShopBranches() {
             href="/contact-us"
             className=" flex flex-col items-center my-5 gap-3"
           >
-            <Button title=" شعبه پاسداران در نقشه " />
+            <Button title=" شعبه پاسداران " />
           </Link>
         </div>
         <div className="flex flex-col justify-center items-center rounded-lg">
@@ -55,7 +55,7 @@ function ShopBranches() {
             href="/contact-us"
             className=" flex flex-col items-center my-5 gap-3"
           >
-            <Button title=" شعبه پیروزی در نقشه " />
+            <Button title=" شعبه میرداماد  " />
           </Link>
         </div>
       </div>

@@ -19,7 +19,6 @@ export default function Aside({ allProducts }) {
   const [filtersValue, setFiltersValue] = useState(initialFilterValue);
   const { searchValue, priceFilterList } = filtersValue;
   const suggestedProducts = allProducts.slice(-3);
-  console.log("suggestedProducts", suggestedProducts);
 
   const productSearchHandler = (e) => {
     if (e.keyCode === 13) {
@@ -53,16 +52,15 @@ export default function Aside({ allProducts }) {
   return (
     <>
       <aside className="col-span-full lg:col-span-4 xl:col-span-3 lg:sticky top-6 space-y-6">
-        <div className=" h-[100vh] bg-transparent">
-          <div className="h-[100vh]">
+        <div className="lg:h-[100vh] bg-transparent">
             <div className="space-y-5">
-              <div className="h-17 shadow-light dark:shadow-none bg-white dark:bg-gray-800 dark:border border-gray-700 rounded-2xl">
-                <div className="h-full flex text-slate-500 dark:text-gray-500">
+              <div className="h-17 shadow-light bg-white border-gray-700 rounded-2xl">
+                <div className="h-full flex text-slate-500 my-4">
                   <input
                     type="text"
                     name="s"
-                    className="w-full bg-transparent dark:bg-transparent text-sm font-dana pr-7 border-none py-3 pl-8 text-gray-900 border border-gray-300 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                    placeholder="در بین محصولات جستجو کنید"
+                    className="w-full bg-transparent text-sm font-dana pr-7 border-none py-4 pl-8 text-gray-900 border border-gray-300 bg-gray-50"
+                    placeholder="  جستجو کنید... "
                     value={searchValue}
                     onChange={(e) =>
                       setFiltersValue((prevFilterData) => ({
@@ -78,7 +76,7 @@ export default function Aside({ allProducts }) {
                     onClick={searchHandler}
                   >
                     <svg
-                      className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                      className="w-4 h-4 text-gray-500"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -99,7 +97,7 @@ export default function Aside({ allProducts }) {
               {/* <!-- Toggle Box Container --> */}
               <div className="hidden sm:grid grid-cols-1 gap-5 ">
                 <div className="">
-                  <aside className=" p-2 lg:pr-7 h-17 shadow-light dark:shadow-none bg-white dark:bg-gray-800 dark:border border-gray-700 rounded-2xl py-2 text-base  font-DanaDemiBold relative w-full inline-block text-zinc-700 dark:text-white z-10 shadow-xl">
+                  <aside className=" p-2 lg:pr-7 h-17 shadow-light bg-white border-gray-700 rounded-2xl py-2 text-base  font-DanaDemiBold relative w-full inline-block text-zinc-700 z-10 shadow-xl">
                     <div className="widget_title">فیلتر براساس قیمت :</div>
                     <div className="block pt-5 px-4 relative font-medium">
                       <form method="get" className="p-0">
@@ -176,7 +174,6 @@ export default function Aside({ allProducts }) {
                 ))}
               </div>
             </div>
-          </div>
         </div>
       </aside>
 

@@ -38,11 +38,11 @@ const Sidebar = () => {
 
   return (
     <>
-      <aside class="hidden md:flex flex-col md:w-64 px-7 py-5 shrink-0 lg:min-h-[calc(100vh-68px)] transition-all lg:transition-none md:p-10 bg-gradient-to-b from-primary to-primary/90 ">
-        <div class="flex items-center justify-between mb-7 border-b md:border-none border-b-gray-200 dark:border-b-slate ">
+      <aside className="hidden md:flex flex-col md:w-64 px-7 py-5 shrink-0 lg:min-h-[calc(100vh-68px)] transition-all lg:transition-none md:p-10 bg-gradient-to-b from-primary to-primary/90 ">
+        <div className="flex items-center justify-between mb-7 border-b md:border-none border-b-gray-200 dark:border-b-slate ">
           <a
-            href="https://sabzlearn.ir"
-            class="flex items-center gap-x-1.5 md:gap-x-2.5"
+            href="/"
+            className="flex items-center gap-x-1.5 md:gap-x-2.5"
           >
             <SiCoffeescript size={40} />
           </a>
@@ -50,7 +50,7 @@ const Sidebar = () => {
         <ul className="flex-col space-y-4 md:space-y-8 md:mt-5 text-lg">
           <Link
            href={"/p-user"}
-            className="flex gap-x-1 items-center opacity-50"
+            className="flex gap-x-1 items-center"
           >
             <ImReply />
             پیشخوان
