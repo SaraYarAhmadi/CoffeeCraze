@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { useState } from "react";
 import { showSwal } from "@/utils/helpers";
 
 function AddCountProduct() {
   const [count, setCount] = useState(1);
+
   const addToCart = () => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -63,7 +63,10 @@ function AddCountProduct() {
           +
         </button>
       </div>
-      <button className="w-52 bg-gradient-to-r from-primary to-secondary border-2 border-primary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full" onClick={addToCart}>
+      <button
+        className="w-52 bg-gradient-to-r from-primary to-secondary border-2 border-primary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full"
+        onClick={addToCart}
+      >
         اضافه کردن به سبد خرید
       </button>
     </div>

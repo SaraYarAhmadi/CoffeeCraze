@@ -5,6 +5,7 @@ import Link from "next/link";
 import { IoCloseSharp } from "react-icons/io5";
 import swal from "sweetalert";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Table = () => {
   const router = useRouter();
@@ -114,9 +115,9 @@ const Table = () => {
 
             <div className="space-y-4">
               {cart.map((item, index) => (
-                <div className="hidden md:flex items-center md:justify-between gap-4 md:gap-6 md:flex-nowrap border-2 border-solid box-border rounded-xl w-full md:w-[90%] mx-auto p-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                <div key={item._id} className="hidden md:flex items-center md:justify-between gap-4 md:gap-6 md:flex-nowrap border-2 border-solid box-border rounded-xl w-full md:w-[90%] mx-auto p-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
                   <div className="flex-col items-center md:w-24 flex-shrink-0">
-                    <img src={item.img} className="w-full" />
+                    <Image src={item.img} className="w-full" />
                     <div className=" md:h-6 text-base md:text-lg flex items-center justify-center text-yellow-400 mt-1">
                       <div
                         className="text-2xl text-red-500 hover:text-primary cursor-pointer"
@@ -160,9 +161,9 @@ const Table = () => {
               ))}
 
               {cart.map((item, index) => (
-                <div class="w-full md:hidden max-w-sm flex-wrap md:flex-nowrap border-2 border-solid box-border rounded-xl mx-auto p-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                <div key={item._id} class="w-full md:hidden max-w-sm flex-wrap md:flex-nowrap border-2 border-solid box-border rounded-xl mx-auto p-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
                   <a href="#">
-                    <img
+                    <Image
                       class="p-8 rounded-t-lg"
                       src={item.img}
                       alt="product image"
@@ -279,7 +280,7 @@ const Table = () => {
           <span className="text-lg md:my-4">
             قبل از تسویه حساب، باید چند محصول را به سبد خرید خود اضافه کنید.
           </span>
-          <span>در صفحه "فروشگاه"، محصولات جالب زیادی خواهید یافت.</span>
+          <span>در صفحه فروشگاه، محصولات جالب زیادی خواهید یافت.</span>
           <div className="mt-9 md:mt-8">
             <Link
               className="bg-gradient-to-r from-brightColor to-brightColor shadow-[0_3px_10px_rgb(0,0,0,0.2)] px-6 py-2 border-2 border-white bg-[#FFDCAB] transition-all rounded-full"

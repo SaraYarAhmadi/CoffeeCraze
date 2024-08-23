@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const page = () => {
   return (
@@ -10,7 +11,7 @@ const page = () => {
           
             <span className="mb-3 text-xl text-primary">  صفحه مورد نظر یافت نشد</span>
           </div>
-          <img
+          <Image
             src="./image/4044.png"
             alt="img"
             className="w-[450px] h-full hidden rounded-2xl md:block object-cover bg-center bg-auto bg-no-repeat "
@@ -24,7 +25,7 @@ const page = () => {
         {/* right side */}
 
         <div className="relative">
-          <img
+          <Image
             src="./image/4042.png"
             alt="img"
             className="w-full h-full hidden rounded-2xl md:block object-cover bg-center bg-auto bg-no-repeat "

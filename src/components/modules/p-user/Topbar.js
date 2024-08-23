@@ -5,6 +5,7 @@ import { MdSms, MdLogout } from "react-icons/md";
 import { ImReply } from "react-icons/im";
 import swal from "sweetalert";
 import {useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Topbar = () => {
   
@@ -42,7 +43,7 @@ const Topbar = () => {
            خوش اومدی 🙌
         </h3>
         <div className="user-profile">
-          <img
+          <Image
             src="/image/avatar.png"
             alt="soroushsara"
             className="object-cover w-12 h-12 md:w-14 md:h-14 rounded-full inline-block cursor-pointer"

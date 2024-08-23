@@ -8,7 +8,7 @@ import { FaRegHeart } from "react-icons/fa";
 import Link from "next/link";
 import Product from "@/components/templates/p-user/wishlist/Product";
 
-async function page() {
+async function Page() {
   connectToDB();
   const user = await authUser();
   let wishes = [];
@@ -44,7 +44,7 @@ async function page() {
             <span className="text-lg md:my-4">
               شما هنوز هیچ محصولی در لیست علاقه مندی های خود ندارید.
             </span>
-            <span>در صفحه "فروشگاه" محصولات جالب زیادی پیدا خواهید کرد.</span>
+            <span>در صفحه فروشگاه محصولات جالب زیادی پیدا خواهید کرد.</span>
             <div className="mt-9 md:mt-6">
               <Link
                 className="bg-gradient-to-r from-brightColor to-brightColor shadow-[0_3px_10px_rgb(0,0,0,0.2)] px-6 py-2 border-2 border-white bg-[#FFDCAB] transition-all rounded-full"
@@ -61,4 +61,4 @@ async function page() {
   );
 }
 
-export default page;
+export default Page;

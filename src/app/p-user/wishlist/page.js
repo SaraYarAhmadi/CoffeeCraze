@@ -6,22 +6,20 @@ import Product from "@/components/templates/p-user/wishlist/Product";
 import { FaRegHeart } from "react-icons/fa";
 import Link from "next/link";
 
-const page = async () => {
+const Page = async () => {
   connectToDB();
   const user = await authUser();
 
-  const wishlist = await WishlistModel.find({ user: user._id }).populate(
-    "product","name price score img"
-  ).lean();
+  const wishlist = await WishlistModel.find({ user: user._id })
+    .populate("product", "name price score img")
+    .lean();
 
-
-  
   return (
     <UserPanelLayout>
       <main>
         <h1 className="flex justify-start mb-16 mr-10 text-xl font-bold border-b-2 border-gray-700 pb-2 w-[90%]">
-            <span> علاقه مندی ها </span>
-          </h1>
+          <span> علاقه مندی ها </span>
+        </h1>
 
         <div>
           {!!wishlist.length &&
@@ -45,7 +43,7 @@ const page = async () => {
             <span className="text-lg md:my-4">
               شما هنوز هیچ محصولی در لیست علاقه مندی های خود ندارید.
             </span>
-            <span>در صفحه "فروشگاه" محصولات جالب زیادی پیدا خواهید کرد.</span>
+            <span>در صفحه فروشگاه محصولات جالب زیادی پیدا خواهید کرد.</span>
             <div className="mt-9 md:mt-6">
               <Link
                 className="bg-gradient-to-r from-brightColor to-brightColor shadow-[0_3px_10px_rgb(0,0,0,0.2)] px-6 py-2 border-2 border-white bg-[#FFDCAB] hover:text-[#AB6B2E] transition-all rounded-full"
@@ -61,4 +59,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Page;

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const ForgotPassword = () => {
   return (
@@ -27,7 +28,7 @@ const ForgotPassword = () => {
             </div>
         </div>
         <div className="relative">
-          <img
+          <Image
             src="./image/backgound.jpg"
             alt="img"
             className="w-[450px] h-full hidden rounded-r-2xl md:block object-cover"

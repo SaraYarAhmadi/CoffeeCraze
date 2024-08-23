@@ -3,6 +3,7 @@ import Box from "@/components/modules/infoBox/InfoBox";
 import { authUser } from "@/utils/serverHelpers";
 import WishlistModel from "@/models/Wishlist";
 import CommentModel from "@/models/Comment";
+import Image from "next/image";
 
 const page = async () => {
   const user = await authUser();
@@ -20,7 +21,7 @@ const page = async () => {
             <Box title="مجموع علاقه مندی ها" value={wishes.length} />
           </div>
           <div className="w-full relative md:w-1/2">
-            <img
+            <Image
               src="./image/roaster3.png"
               alt="img"
               className="w-full h-full rounded-2xl md:block object-cover bg-center bg-auto bg-no-repeat"

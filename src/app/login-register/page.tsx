@@ -2,10 +2,10 @@
 import React, { useState } from 'react'
 import Login from '@/components/templates/login-register/Login'
 import Register from '@/components/templates/login-register/Register'
-import Sms from '@/components/templates/login-register/Sms'
 import { authTypes } from '@/utils/constant';
+import Image from "next/image";
 
-function page() {
+function Page() {
   const [authType, setAuthType] = useState(authTypes.LOGIN);
 
   const showRegisterForm = () => setAuthType(authTypes.REGISTER);
@@ -22,7 +22,7 @@ function page() {
         {/* <Sms/> */}
         {/* right side */}
         <div className="relative">
-          <img
+          <Image
             src="./image/backgound.jpg"
             alt="img"
             className="w-[450px] h-full hidden rounded-r-2xl md:block object-cover"
@@ -41,4 +41,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

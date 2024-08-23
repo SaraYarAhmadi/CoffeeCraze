@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
 
 const Hero = () => {
 
@@ -40,7 +41,7 @@ const Hero = () => {
             {/* Image section */}
             <div
               data-aos="zoom-in" data-aos-duration="300" className="min-h-[450px] flex justify-center items-center relative order-1 sm:order-2 ">
-              <img data-aos-once="true" src="/image/b2.png" alt="biryani img" className="w-[350px] sm:w-[300px] lg:w-[450px] sm:scale-125 mx-auto spin " />
+              <Image data-aos-once="true" src="/image/b2.png" alt="biryani img" className="w-[350px] sm:w-[300px] lg:w-[450px] sm:scale-125 mx-auto spin " />
               <div
                 data-aos="fade-left"
                 className="bg-gradient-to-r from-primary to-secondary p-3 rounded-xl absolute top-10 left-10" >

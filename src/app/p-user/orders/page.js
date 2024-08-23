@@ -3,7 +3,7 @@ import Link from "next/link";
 import UserPanelLayout from "@/components/layouts/UserPanelLayout";
 import { TbShoppingCartX } from "react-icons/tb";
  
-function page() {
+function Page() {
   return (
     <UserPanelLayout>
       <main>
@@ -36,4 +36,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

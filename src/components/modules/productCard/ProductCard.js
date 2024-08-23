@@ -4,12 +4,13 @@ import { FaRegHeart, FaShoppingCart } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
 import Link from "next/link";
 import { FaRegStar, FaStar } from "react-icons/fa";
+import Image from "next/image";
 
 const ProductCard = ({ name, price, img, _id, score }) => {
   return (
     <div className="p-2 border-2 border-gray-200 rounded-2xl bg-white relative shadow-xl">
       <div className="relative w-100 mb-2 md:mb-5 rounded-t-lg overflow-hidden">
-        <img src={img} alt="img1" className="w-100 h-full mx-auto md:w-auto" />
+        <Image src={img} alt="img1" className="w-100 h-full mx-auto md:w-auto" />
       </div>
       <Link
         href={`product/${_id}`}

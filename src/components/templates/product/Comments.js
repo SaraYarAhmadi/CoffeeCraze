@@ -4,6 +4,7 @@ import { FaRegStar, FaStar, FaRegUserCircle } from "react-icons/fa";
 import CommentForm from "../../templates/product/CommentForm";
 import Link from "next/link";
 import { BiCommentX } from "react-icons/bi";
+import Image from "next/image";
 
 function Comments({ product }) {
   const { productID, comments } = product;
@@ -32,7 +33,7 @@ function Comments({ product }) {
               <div className="flex flex-col pb-4 mb-4 border-b border-b-neutral-200/60 dark:border-white/10">
                 <div className="flex items-center gap-x-3.5">
                   <div className="w-12 h-12 border-b-neutral-200/60 dark:border-white/10 sm:flex-center border rounded-full">
-                    <img
+                    <Image
                       src="/image/avatar2.png"
                       className="w-full flex object-cover rounded-full"
                       alt="img"

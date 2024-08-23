@@ -2,6 +2,7 @@ import Button from "@/components/modules/button/Button";
 import ProductCard from "@/components/modules/productCard/ProductCard";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 function ShopBranches() {
   return (
@@ -15,7 +16,7 @@ function ShopBranches() {
       >
         <div className="flex flex-col justify-center items-center rounded-lg">
           <div className="w-full md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] lg:p-3 rounded-lg">
-            <img
+            <Image
               className="w-full h-full rounded-lg"
               src="./image/shopping5.png"
               alt="img"
@@ -30,7 +31,7 @@ function ShopBranches() {
         </div>
         <div className="flex flex-col justify-center items-center rounded-lg">
           <div className="w-full md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] lg:p-3">
-            <img
+            <Image
               className="w-full h-full rounded-lg"
               src="./image/shopping4.png"
               alt="img"
@@ -45,7 +46,7 @@ function ShopBranches() {
         </div>
         <div className="flex flex-col justify-center items-center rounded-lg">
           <div className="w-full md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] lg:p-3">
-            <img
+            <Image
               className="w-full h-full rounded-lg"
               src="./image/shopping3.png"
               alt="img"

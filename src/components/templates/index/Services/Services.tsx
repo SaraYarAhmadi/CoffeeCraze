@@ -1,5 +1,7 @@
 import React from "react";
-import Img2 from "../../assets/coffee2.png";
+import Image from "next/image";
+
+
 const ServicesData = [
   {
     id: 1,
@@ -43,7 +45,7 @@ const Services = () => {
             {ServicesData.map((service) => (
               <div key={service.id} data-aos="fade-up" data-aos-delay={service.aosDelay} className="rounded-2xl bg-white relative shadow-xl duration-high group max-w-[300px]">
                 <div className="h-[122px]">
-                  <img
+                  <Image
                     src={`./${service.img}`} alt="" className="max-w-[150px] block mx-auto transform -translate-y-14
                   group-hover:scale-105 group-hover:rotate-6 duration-300 rounded-full"/>
                 </div>

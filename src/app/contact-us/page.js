@@ -1,6 +1,7 @@
 import Footer from "@/components/modules/footer/Footer";
 import Navbar from "@/components/modules/navbar/Navbar";
 import Map from "../../components/templates/contact-us/Map";
+import Image from "next/image";
 import { authUser } from "@/utils/serverHelpers";
 import {
   FaEnvelopeOpenText,
@@ -39,14 +40,16 @@ const page = async () => {
             href="/"
             className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100"
           >
-            <img
+            <Image
               className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
               src="./image/111.png"
               alt=""
             />
             <Map>
               <h3> فروشگاه شعبه 1 </h3>
-              <p className="py-3 w-full">تهران, خیابان شریعتی, تقاطع میرداماد, نبش بن بست شریفی</p>
+              <p className="py-3 w-full">
+                تهران, خیابان شریعتی, تقاطع میرداماد, نبش بن بست شریفی
+              </p>
               <p>021-887777</p>
             </Map>
           </Link>
@@ -54,14 +57,16 @@ const page = async () => {
             href="/"
             className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100"
           >
-            <img
+            <Image
               className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
               src="./image/333.png"
               alt=""
             />
             <Map>
               <h3> فروشگاه شعبه 2 </h3>
-              <p className="py-3">تهران، چهارراه استانبول، جنب پاساژ گلشن، قهوه ریو</p>
+              <p className="py-3">
+                تهران، چهارراه استانبول، جنب پاساژ گلشن، قهوه ریو
+              </p>
               <p>021-8844444</p>
             </Map>
           </Link>
@@ -69,7 +74,7 @@ const page = async () => {
             href="/"
             className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100"
           >
-            <img
+            <Image
               className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
               src="./image/444.png"
               alt=""
@@ -107,7 +112,7 @@ const page = async () => {
         <div className="flex-col md:flex bg-white shadow-2xl rounded-2xl md:flex-row md:my-16 my-5">
           {/* <!-- left side --> */}
           <div className="w-full relative md:w-1/2">
-            <img
+            <Image
               src="./image/contact-us.jpg"
               alt="img"
               className="w-full h-full rounded-2xl md:block object-cover bg-center bg-auto bg-no-repeat"
@@ -131,10 +136,7 @@ const page = async () => {
             </div>
             <div className="w-full flex h-4 items-center">
               <BiSolidContact />
-              <p>
-                تهران، شهرک صنعتی عباس آباد، بلوار ابن
-                سینا  
-              </p>
+              <p>تهران، شهرک صنعتی عباس آباد، بلوار ابن سینا</p>
             </div>
             <div className="w-full flex gap-x-2 items-center">
               <FaPhone />

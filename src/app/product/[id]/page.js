@@ -6,6 +6,7 @@ import { authUser } from "../../../utils/serverHelpers";
 import Details from "@/components/templates/product/Details";
 import connectToDB from "@/configs/db";
 import ProductModel from "@/models/Product";
+import Image from "next/image";
 
 const product = async ({ params }) => {
   const user = await authUser();
@@ -25,7 +26,7 @@ const product = async ({ params }) => {
         <div className="flex items-center justify-center min-h-screen lg:px-32 px-5 py-24 bg-backgroundColor mx-auto text-center">
           <div className="flex flex-col justify-between lg:flex-row gap-5 lg:items-center">
             <div className="flex justify-center items-center ">
-                <img
+                <Image
                   src={product.img}
                   alt=""
                   className="lg:w-full h-full aspect-square object-cover rounded-xl"

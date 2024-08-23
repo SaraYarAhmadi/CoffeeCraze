@@ -4,6 +4,7 @@ import Slider from "react-slider";
 import ProductCard from "../../modules/productCard/ProductCard";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 const max = 1000000;
 const min = 0;
@@ -136,9 +137,9 @@ export default function Aside({ allProducts }) {
               <div className="hidden lg:flex flex-col bg-white p-4 gap-y-2 mt-10">
                 <p className=""> پیشنهادی برای شما</p>
                 {suggestedProducts.map((product) => (
-                  <div className="flex items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 p-2">
+                  <div key={product._id} className="flex items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 p-2">
                     <div className="w-[100px] overflow-hidden rounded-xl">
-                      <img
+                      <Image
                         className="object-cover w-full h-full overflow-hidden"
                         src={product.img}
                         alt=""
