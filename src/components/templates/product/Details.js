@@ -3,7 +3,6 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import { IoCheckmark } from "react-icons/io5";
 import AddToWishlist from "./AddToWishlist";
 import React, { useState } from "react";
-import { useState } from "react";
 import swal from "sweetalert";
 import { useRouter } from "next/navigation";
 
