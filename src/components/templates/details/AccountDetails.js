@@ -63,6 +63,8 @@ function AccountDetails() {
             <Image
               src="https://secure.gravatar.com/avatar/817fc025272d1a7ac4e7459872c3e891?s=256&amp;d=mm&amp;r=g"
               className="w-32 md:w-44 h-32 md:h-44 rounded-full"
+              width={500}
+              height={500}
             />
             <div className="flex felx-col items-center justify-center gap-x-4">
               <button

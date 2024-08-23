@@ -22,9 +22,11 @@ const page = async () => {
           </div>
           <div className="w-full relative md:w-1/2">
             <Image
-              src="./image/roaster3.png"
+              src="/image/roaster3.png"
               alt="img"
               className="w-full h-full rounded-2xl md:block object-cover bg-center bg-auto bg-no-repeat"
+              width={500}
+              height={500}
             />
           </div>
         </div>

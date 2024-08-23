@@ -18,8 +18,10 @@ function ShopBranches() {
           <div className="w-full md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] lg:p-3 rounded-lg">
             <Image
               className="w-full h-full rounded-lg"
-              src="./image/shopping5.png"
+              src="/image/shopping5.png"
               alt="img"
+              width={500}
+              height={500}
             />
           </div>
           <Link
@@ -33,8 +35,10 @@ function ShopBranches() {
           <div className="w-full md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] lg:p-3">
             <Image
               className="w-full h-full rounded-lg"
-              src="./image/shopping4.png"
+              src="/image/shopping4.png"
               alt="img"
+              width={500}
+              height={500}
             />
           </div>
           <Link
@@ -48,8 +52,10 @@ function ShopBranches() {
           <div className="w-full md:w-[250px] md:h-[250px] lg:w-[300px] lg:h-[300px] lg:p-3">
             <Image
               className="w-full h-full rounded-lg"
-              src="./image/shopping3.png"
+              src="/image/shopping3.png"
               alt="img"
+              width={500}
+              height={500}
             />
           </div>
           <Link

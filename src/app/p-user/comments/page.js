@@ -13,6 +13,8 @@ const page = async () => {
     "productID",
     "name"
   );
+  console.log(comments);
+  
   return (
     <Layout>
       <main>

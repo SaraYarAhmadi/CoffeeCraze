@@ -5,7 +5,7 @@ import Image from "next/image";
 const ServicesData = [
   {
     id: 1,
-    img: "./image/roaster5.png",
+    img: "/image/roaster5.png",
     name: "ارسال با پیک و پست",
     description:
       "ارسال سفارشات به تمام نقاط کشور",
@@ -13,7 +13,7 @@ const ServicesData = [
   },
   {
     id: 2,
-    img: "./image/roaster4.png",
+    img: "/image/roaster4.png",
     name: "ضمانت 7 روزه",
     description:
       "هفت روز ضمانت عودت در صورت داشتن مشکل ",
@@ -21,7 +21,7 @@ const ServicesData = [
   },
   {
     id: 3,
-    img: "image/roaster1.png",
+    img: "/image/roaster1.png",
     name: "روست تخصصی قهوه ها",
     description:
       " قهوه ها در بهترین کیفیت و تازه ترین حالت به دست شما می رسد",
@@ -46,8 +46,8 @@ const Services = () => {
               <div key={service.id} data-aos="fade-up" data-aos-delay={service.aosDelay} className="rounded-2xl bg-white relative shadow-xl duration-high group max-w-[300px]">
                 <div className="h-[122px]">
                   <Image
-                    src={`./${service.img}`} alt="" className="max-w-[150px] block mx-auto transform -translate-y-14
-                  group-hover:scale-105 group-hover:rotate-6 duration-300 rounded-full"/>
+                    src={`${service.img}`} alt="" className="max-w-[150px] block mx-auto transform -translate-y-14
+                  group-hover:scale-105 group-hover:rotate-6 duration-300 rounded-full" width={150} height={150} />
                 </div>
                 <div className="w-[280px] h-[110px] p-4 text-center">
                   <h1 className="text-sm lg:text-xl font-bold mb-2">{service.name}</h1>

@@ -19,9 +19,11 @@ const page = async () => {
         />
         <div className="flex items-center justify-center w-full h-full">
           <Image
-            src="./image/about5.png"
+            src="/image/about5.png"
             alt="about"
             className="bg-cover bg-center bg-no-repeat rounded-3xl"
+            width={1000}
+            height={500}
           />
         </div>
 
@@ -75,9 +77,11 @@ const page = async () => {
                 {/* Image section */}
                 <div className="flex items-center justify-center text-center">
                   <Image
-                    src="./image/about3.png"
+                    src="/image/about3.png"
                     alt="biryani img"
                     className="max-w-[430px] w-full mx-auto drop-shadow-[-10px_10px_12px_rgba(0,0,0,1)]"
+                    width={500}
+                    height={500}
                   />
                 </div>
                 {/* text content section */}

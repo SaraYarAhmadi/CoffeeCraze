@@ -29,9 +29,11 @@ const ForgotPassword = () => {
         </div>
         <div className="relative">
           <Image
-            src="./image/backgound.jpg"
+            src="/image/backgound.jpg"
             alt="img"
             className="w-[450px] h-full hidden rounded-r-2xl md:block object-cover"
+            width={450}
+            height={500}
           />
           {/* <!-- text on image  --> */}
           <div

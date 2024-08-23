@@ -2,6 +2,7 @@ import { IoMdStar } from "react-icons/io";
 import { useEffect, useState } from "react";
 import showSwal from "../../../utils/helpers";
 import { FaRegUserCircle } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 const CommentForm = ({ productID, userId }) => {
   const [username, setUsername] = useState("");
@@ -9,6 +10,7 @@ const CommentForm = ({ productID, userId }) => {
   const [body, setBody] = useState("");
   const [score, setScore] = useState(5);
   const [isSaveUserInfo, setIsSaveUserInfo] = useState(false);
+  const router = useRouter();
 
   const [user, setUser] = useState({});
 
@@ -74,6 +76,7 @@ const CommentForm = ({ productID, userId }) => {
 
     if (res.status === 201) {
       showSwal("کامنت مورد نظر با موفقیت ثبت شد", "success", "فهمیدم");
+      router.replace(`/product/${productID}`);
     }
   };
 

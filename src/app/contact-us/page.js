@@ -42,8 +42,10 @@ const page = async () => {
           >
             <Image
               className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-              src="./image/111.png"
+              src="/image/111.png"
               alt=""
+              width={500}
+              height={500}
             />
             <Map>
               <h3> فروشگاه شعبه 1 </h3>
@@ -59,8 +61,10 @@ const page = async () => {
           >
             <Image
               className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-              src="./image/333.png"
+              src="/image/333.png"
               alt=""
+              width={500}
+              height={500}
             />
             <Map>
               <h3> فروشگاه شعبه 2 </h3>
@@ -76,8 +80,10 @@ const page = async () => {
           >
             <Image
               className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-              src="./image/444.png"
+              src="/image/444.png"
               alt=""
+              width={500}
+              height={500}
             />
             <Map>
               <h3> فروشگاه شعبه 3 </h3>
@@ -113,9 +119,11 @@ const page = async () => {
           {/* <!-- left side --> */}
           <div className="w-full relative md:w-1/2">
             <Image
-              src="./image/contact-us.jpg"
+              src="/image/contact-us.jpg"
               alt="img"
               className="w-full h-full rounded-2xl md:block object-cover bg-center bg-auto bg-no-repeat"
+              width={500}
+              height={500}
             />
           </div>
 

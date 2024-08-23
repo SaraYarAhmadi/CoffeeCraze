@@ -4,6 +4,9 @@ const nextConfig = {
     appDir: true,
     serverComponentsExternalPackages: ["mongoose"],
   },
+  images: {
+    domains: ["localhost", "secure.gravatar.com"],
+  },
 };
 
 export default nextConfig;

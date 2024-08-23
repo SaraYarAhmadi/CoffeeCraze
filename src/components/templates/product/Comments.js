@@ -37,6 +37,8 @@ function Comments({ product }) {
                       src="/image/avatar2.png"
                       className="w-full flex object-cover rounded-full"
                       alt="img"
+                      width={500}
+                      height={500}
                     />
                   </div>
                   <div className="flex flex-row gap-x-2">
@@ -73,10 +75,9 @@ function Comments({ product }) {
               <div className="flex justify-center mb-2">
                 <BiCommentX className="text-5xl text-gray-300 text-center" />
               </div>
-              
 
               <span className="text-lg md:my-4">
-                 هنوز هیچ کامنتی  برای این محصولات ثبت نشده!
+                هنوز هیچ کامنتی برای این محصولات ثبت نشده!
               </span>
               <p className="text-sm my-2">
                 پس از خرید قهوه از ما لطفا نظر خود را با ما در میان بذارید

@@ -115,9 +115,17 @@ const Table = () => {
 
             <div className="space-y-4">
               {cart.map((item, index) => (
-                <div key={item._id} className="hidden md:flex items-center md:justify-between gap-4 md:gap-6 md:flex-nowrap border-2 border-solid box-border rounded-xl w-full md:w-[90%] mx-auto p-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                <div
+                  key={item._id}
+                  className="hidden md:flex items-center md:justify-between gap-4 md:gap-6 md:flex-nowrap border-2 border-solid box-border rounded-xl w-full md:w-[90%] mx-auto p-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+                >
                   <div className="flex-col items-center md:w-24 flex-shrink-0">
-                    <Image src={item.img} className="w-full" />
+                    <Image
+                      src={item.img}
+                      className="w-full"
+                      width={500}
+                      height={500}
+                    />
                     <div className=" md:h-6 text-base md:text-lg flex items-center justify-center text-yellow-400 mt-1">
                       <div
                         className="text-2xl text-red-500 hover:text-primary cursor-pointer"
@@ -161,12 +169,17 @@ const Table = () => {
               ))}
 
               {cart.map((item, index) => (
-                <div key={item._id} class="w-full md:hidden max-w-sm flex-wrap md:flex-nowrap border-2 border-solid box-border rounded-xl mx-auto p-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+                <div
+                  key={item._id}
+                  class="w-full md:hidden max-w-sm flex-wrap md:flex-nowrap border-2 border-solid box-border rounded-xl mx-auto p-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)]"
+                >
                   <a href="#">
                     <Image
                       class="p-8 rounded-t-lg"
                       src={item.img}
                       alt="product image"
+                      width={500}
+                      height={500}
                     />
                   </a>
                   <div class="px-5 pb-5">

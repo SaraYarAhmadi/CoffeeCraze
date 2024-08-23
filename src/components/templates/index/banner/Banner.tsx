@@ -41,7 +41,7 @@ const Hero = () => {
             {/* Image section */}
             <div
               data-aos="zoom-in" data-aos-duration="300" className="min-h-[450px] flex justify-center items-center relative order-1 sm:order-2 ">
-              <Image data-aos-once="true" src="/image/b2.png" alt="biryani img" className="w-[350px] sm:w-[300px] lg:w-[450px] sm:scale-125 mx-auto spin " />
+              <Image data-aos-once="true" src="/image/b2.png" alt="biryani img" className="w-[350px] sm:w-[300px] lg:w-[450px] sm:scale-125 mx-auto spin " width={350} height={350}  />
               <div
                 data-aos="fade-left"
                 className="bg-gradient-to-r from-primary to-secondary p-3 rounded-xl absolute top-10 left-10" >

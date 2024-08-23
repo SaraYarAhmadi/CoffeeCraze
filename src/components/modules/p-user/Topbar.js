@@ -47,6 +47,8 @@ const Topbar = () => {
             src="/image/avatar.png"
             alt="soroushsara"
             className="object-cover w-12 h-12 md:w-14 md:h-14 rounded-full inline-block cursor-pointer"
+            width={500}
+            height={500}
           />
         </div>
         <div className="md:hidden flex justify-between items-center" onClick={logoutHandler}>

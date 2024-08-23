@@ -30,6 +30,8 @@ const product = async ({ params }) => {
                   src={product.img}
                   alt=""
                   className="lg:w-full h-full aspect-square object-cover rounded-xl"
+                  width={500}
+                  height={500}
                 />
             </div>
             {/* ABOUT */}

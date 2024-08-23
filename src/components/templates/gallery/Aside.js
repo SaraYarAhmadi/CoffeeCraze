@@ -143,6 +143,8 @@ export default function Aside({ allProducts }) {
                         className="object-cover w-full h-full overflow-hidden"
                         src={product.img}
                         alt=""
+                        width={500}
+                        height={500}
                       />
                     </div>
 

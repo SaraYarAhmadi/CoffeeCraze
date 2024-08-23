@@ -11,6 +11,8 @@ const Order = () => {
           <Image
             src="https://set-coffee.com/wp-content/uploads/2022/03/ethiopia-430x430.png"
             alt=""
+            width={500}
+            height={500}
           />
         </div>
         <p>تکمیل شده</p>
