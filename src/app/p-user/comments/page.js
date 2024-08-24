@@ -9,12 +9,12 @@ import { BiCommentX } from "react-icons/bi";
 const page = async () => {
   connectToDB();
   const user = await authUser();
-  const comments = await Commentmodel.find({ user: user._id }, "-__v").populate(
-    "productID",
-    "name"
-  );
+  const comments = await Commentmodel.find(
+    { user: user?._id },
+    "-__v"
+  ).populate("productID", "name");
   console.log(comments);
-  
+
   return (
     <Layout>
       <main>
@@ -44,22 +44,17 @@ const page = async () => {
                     </th>
                   </tr>
                 </thead>
-
-                {!!comments.length &&
-                  comments.map((comment) => (
-                    <DataTable
-                      key={comment._id}
-                      comments={JSON.parse(JSON.stringify(comments))}
-                      title="لیست کامنت‌ها"
-                    />
-                  ))}
+                <DataTable
+                  comments={JSON.parse(JSON.stringify(comments))}
+                  title="لیست کامنت‌ها"
+                />
               </table>
             )}
           </div>
         </div>
         {comments.length === 0 && (
           <div className="relative my-20 text-center md:mt-3">
-              <div className="w-full flex items-center justify-center md:my-4">
+            <div className="w-full flex items-center justify-center md:my-4">
               <BiCommentX className="text-9xl text-gray-300" />
             </div>
             <p className="text-4xl mb-4">کامنتی یافت نشد</p>

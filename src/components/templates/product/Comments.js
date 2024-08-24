@@ -8,6 +8,8 @@ import Image from "next/image";
 
 function Comments({ product }) {
   const { productID, comments } = product;
+  console.log(product);
+  
 
   return (
     <div className="flex flex-col md:flex-row gap-x-4 lg:px-32 px-5 pt-12">
@@ -47,11 +49,11 @@ function Comments({ product }) {
                       {new Date(comment.date).toLocaleDateString("fa-IR")}
                     </span>
                     <div className="flex flex-row gap-1 text-yellow-400">
-                      {new Array(product.score).fill(0).map((item, index) => (
+                      {new Array(comment.score).fill(0).map((item, index) => (
                         <FaStar key={index} />
                       ))}
 
-                      {new Array(5 - product.score)
+                      {new Array(5 - comment.score)
                         .fill(0)
                         .map((item, index) => (
                           <FaRegStar key={index} />

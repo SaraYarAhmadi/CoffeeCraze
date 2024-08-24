@@ -2,7 +2,6 @@ import connectToDB from "@/configs/db";
 import UserModel from "@/models/User";
 import { generateAccessToken, hashPassword } from "@/utils/auth";
 import { roles } from "../../../../utils/constant";
-import { log } from "console";
 
 export async function POST(req) {
   connectToDB();
@@ -14,7 +13,7 @@ export async function POST(req) {
 
   
   const isUserExist = await UserModel.findOne({
-    $or: [{ name }, { phone }],
+    $or: [{ email }, { name }],
   });
   
   if (isUserExist) {
@@ -29,7 +28,7 @@ export async function POST(req) {
   }
   
   const hashedPassword = await hashPassword(password);
-  const accessToken = generateAccessToken({ name });
+  const accessToken = generateAccessToken({ email });
   
   const users = await UserModel.find({});
   await UserModel.create({

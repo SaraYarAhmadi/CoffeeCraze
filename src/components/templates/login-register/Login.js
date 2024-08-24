@@ -11,7 +11,7 @@ function Login({ showRegisterForm }) {
 
   const loginWithPassword = async () => {
     if (!phoneOrEmail) {
-      return showSwal("لطفا شماره تماس یا ایمیل را وارد کنید", "error", "چشم");
+      return showSwal("لطفا شماره تماس یا ایمیل را وارد کنید", "error", "فهمیدم");
     }
 
     const isValidEmail = valiadteEmail(phoneOrEmail);
@@ -36,7 +36,6 @@ function Login({ showRegisterForm }) {
       body: JSON.stringify(user),
     });
     const data = await res.json();
-    console.log("res=>", data);
 
     if (res.status === 200) {
       swal({

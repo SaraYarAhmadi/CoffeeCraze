@@ -96,15 +96,7 @@ const CommentForm = ({ productID, userId }) => {
           <div className="flex items-center justify-start text-gray-500">
             <IoMdStar
               className="hover:text-orange-300"
-              onClick={() => setCommentScore(5)}
-            />
-            <IoMdStar
-              className="hover:text-orange-300"
-              onClick={() => setCommentScore(4)}
-            />
-            <IoMdStar
-              className="hover:text-orange-300"
-              onClick={() => setCommentScore(3)}
+              onClick={() => setCommentScore(1)}
             />
             <IoMdStar
               className="hover:text-orange-300"
@@ -112,7 +104,15 @@ const CommentForm = ({ productID, userId }) => {
             />
             <IoMdStar
               className="hover:text-orange-300"
-              onClick={() => setCommentScore(1)}
+              onClick={() => setCommentScore(3)}
+            />
+            <IoMdStar
+              className="hover:text-orange-300"
+              onClick={() => setCommentScore(4)}
+            />
+            <IoMdStar
+              className="hover:text-orange-300"
+              onClick={() => setCommentScore(5)}
             />
           </div>
         </div>

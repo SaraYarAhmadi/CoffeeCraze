@@ -6,12 +6,11 @@ import swal from "sweetalert";
 import { useRouter } from "next/navigation";
 
 function Register({ showloginForm }) {
-  const [isRegisterWithPass, setIsRegisterWithPass] = useState(false);
+  const router = useRouter();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const router = useRouter();
 
   const signUp = async () => {
     if (!name.trim()) {
@@ -32,7 +31,7 @@ function Register({ showloginForm }) {
 
     const isValidPassword = valiadtePassword(password);
     if (!isValidPassword) {
-      return showSwal("پسورد وارد شده قابل حدس هست", "error", "تلاش مجدد ");
+      return showSwal(" پسورد باید شامل حروف بزرگ و کوچک انگلیسی ، اعداد و حروف ویژه باشد ", "error", "تلاش مجدد ");
     }
 
     const user = { name, phone, email, password };
@@ -57,6 +56,7 @@ function Register({ showloginForm }) {
       showSwal("کاربری با این اطلاعات از قبل وجود دارد", "error", "تلاش مجدد");
     }
   };
+
   return (
     <>
       <div className="w-[350px] md:w-[450px] h-[550px] flex flex-col justify-center p-8 md:p-14 text-base">
@@ -93,31 +93,26 @@ function Register({ showloginForm }) {
             placeholder="ایمیل (دلخواه)"
           />
         </div>
-        {isRegisterWithPass && (
-          <div className="py-2">
-            <input
-              type="password"
-              name="pass"
-              id="pass"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              className="w-full p-2 border border-gray-400 rounded-md placeholder:text-gray-500"
-              placeholder="رمزعبور"
-            />
-          </div>
-        )}
+
+        <div className="py-2">
+          <input
+            type="password"
+            name="pass"
+            id="pass"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            className="w-full p-2 border border-gray-400 rounded-md placeholder:text-gray-500"
+            placeholder="رمزعبور"
+          />
+        </div>
 
         <button
           className="w-full bg-black text-white p-2 rounded-lg my-2 hover:bg-white hover:text-black hover:border hover:border-gray-300 bg-gradient-to-r from-primary to-secondary border-2 border-primary py-2 px-4"
           onClick={() => {
-            if (isRegisterWithPass) {
-              signUp();
-            } else {
-              setIsRegisterWithPass(true);
-            }
+            signUp();
           }}
         >
-          ثبت نام با رمز عبور
+          ثبت نام   
         </button>
         <div className="text-center text-gray-400">
           <button

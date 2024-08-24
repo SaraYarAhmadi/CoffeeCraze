@@ -4,14 +4,17 @@ import connectToDB from "@/configs/db";
 import { verifyAccessToken } from "./auth";
 
 const authUser = async () => {
-connectToDB();
-  const token = cookies().get("token");
+  connectToDB();
   let user = null;
-
+  const token = cookies().get("token");
+  
   if (token) {
     const tokenPayload = verifyAccessToken(token.value);
+    console.log("tokennnnnnnnnnnnnnnnnnn",tokenPayload);
+
     if (tokenPayload) {
       user = await UserModel.findOne({ email: tokenPayload.email });
+      console.log("userrrrrrrrrrrrrrrrrr",user);
     }
   }
 

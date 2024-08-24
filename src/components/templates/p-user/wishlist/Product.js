@@ -30,7 +30,7 @@ const Card = ({ price, score, name, productID,img }) => {
   };
 
   return (
-    <div className="flex items-center md:justify-between gap-4 md:gap-6 flex-wrap md:flex-nowrap border-2 border-solid box-border rounded-xl w-full md:w-[90%] mx-auto p-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)]">
+    <div className="flex items-center md:justify-between gap-4 md:gap-6 flex-wrap md:flex-nowrap border-2 border-solid box-border rounded-xl w-full md:w-[90%] mx-auto p-8 shadow-[0_3px_10px_rgb(0,0,0,0.2)] mb-4">
       <div className="flex-col items-center w-full md:w-28 flex-shrink-0">
         <Image src={img} className="w-full" width={500} height={500}  />
         <div className=" md:h-6 text-base md:text-lg flex items-center justify-center text-yellow-400 mt-1">

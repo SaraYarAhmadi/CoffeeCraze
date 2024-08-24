@@ -49,9 +49,17 @@ function AddToWishlist({ productID }) {
       swal({
         title: "محصول مورد نظر به علاقه‌مندی‌ها اضافه شد",
         icon: "success",
-        buttons: "ورود به علاقه مندی ها",
-      }).then(() => {
-        router.replace("/wishList");
+        buttons: {
+          confirm: "فهمیدم",
+          viewCart: {
+            text: "مشاهده علاقمندی ها ",
+            value: "viewCart",
+          },
+        },
+      }).then((value) => {
+        if (value === "viewCart") {
+          router.replace("/wishList");
+        }
       });
     }
   };

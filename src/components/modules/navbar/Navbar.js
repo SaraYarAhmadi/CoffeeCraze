@@ -144,7 +144,7 @@ const Navbar = ({ isLogin }) => {
                 ورود / عضویت
               </Link>
             ) : (
-              <Link href="/p-user"> حساب کاربری </Link>
+              <Link href="/p-user" className="inline-block cursor-pointer hover:text-brightColor"> حساب کاربری </Link>
             )}
         </div>
       </div>

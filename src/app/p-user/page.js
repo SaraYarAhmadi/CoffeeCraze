@@ -8,8 +8,8 @@ import Image from "next/image";
 const page = async () => {
   const user = await authUser();
 
-  const wishes = await WishlistModel.find({ user: user._id });
-  const comments = await CommentModel.find({ user: user._id });
+  const wishes = await WishlistModel.find({ user: user?._id });
+  const comments = await CommentModel.find({ user: user?._id });
 
   return (
     <Layout>

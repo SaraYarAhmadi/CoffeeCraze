@@ -5,6 +5,7 @@ import { showSwal } from "@/utils/helpers";
 import { FaRegStar, FaStar } from "react-icons/fa";
 
 export default function DataTable({ comments, title }) {
+  
   const showCommentBody = (commentBody) => {
     swal({
       title: commentBody,
@@ -15,7 +16,7 @@ export default function DataTable({ comments, title }) {
 
   return (
   
-          <tbody>
+          <tbody className="mb-4">
             {comments.map((comment, index) => (
               <tr
                 className="odd:bg-white even:bg-gray-100 border-b"
