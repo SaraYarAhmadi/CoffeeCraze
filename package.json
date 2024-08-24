@@ -12,6 +12,7 @@
     "@babel/core": "^7.23.3",
     "@babel/node": "^7.22.19",
     "@babel/preset-env": "^7.23.3",
+    "@uploadthing/react": "^4.1.1",
     "aos": "^3.0.0-beta.6",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
@@ -40,15 +41,16 @@
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.10.7",
     "sweetalert2-react-content": "^5.0.7",
-    "swiper": "^11.0.4"
+    "swiper": "^11.0.4",
+    "uploadthing": "^4.1.1"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
     "@types/leaflet": "^1.9.12",
-    "@types/react-leaflet": "^3.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-leaflet": "^3.0.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",

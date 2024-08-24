@@ -5,7 +5,7 @@ const nextConfig = {
     serverComponentsExternalPackages: ["mongoose"],
   },
   images: {
-    domains: ["localhost", "secure.gravatar.com"],
+    domains: ["utfs.io", "localhost", "secure.gravatar.com"],
   },
 };
 
